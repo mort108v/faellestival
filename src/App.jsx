@@ -1,9 +1,18 @@
-import { useState } from 'react'
-import logo from './logo.svg'
-import './App.css'
+import { useState } from "react";
+import logo from "./logo.svg";
+
+export const envData = {
+  availableSpots: process.env.FAELLESTIVAL_AVAILABLE_SPOTS,
+  bands: process.env.FAELLESTIVAL_BANDS,
+  events: process.env.FAELLESTIVAL_EVENTS,
+  fullfillReservation: process.env.FAELLESTIVAL_FULLFILL_RESERVATION,
+  schedule: process.env.FAELLESTIVAL_SCHEDULE,
+  reserveSpot: process.env.FAELLESTIVAL_RESERVE_SPOT,
+  settings: process.env.FAELLESTIVAL_SETTINGS,
+};
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [count, setCount] = useState(0);
 
   return (
     <div className="App">
@@ -27,7 +36,7 @@ function App() {
           >
             Learn React
           </a>
-          {' | '}
+          {" | "}
           <a
             className="App-link"
             href="https://vitejs.dev/guide/features.html"
@@ -39,7 +48,7 @@ function App() {
         </p>
       </header>
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
