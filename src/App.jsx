@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { BandsContext } from "./Contexts/BandsContext.js";
 import { LoginContext } from "./Contexts/LoginContext.js";
-// import { TicketsContext } from "./Contexts/TicketsContext.js";
+import { TicketsContext } from "./Contexts/TicketsContext.js";
 import { ScheduleContext } from "./Contexts/ScheduleContext.js";
+import FestApp from "./components/FestApp";
+import RegApp from "./components/RegApp";
 
 export const envData = {
   availableSpots: import.meta.env.VITE_FAELLESTIVAL_AVAILABLE_SPOTS,
@@ -18,7 +20,7 @@ function App() {
   const [bandsData, setBandsData] = useState([]);
   const [isLogin, setIsLogin] = useState(false);
   const [scheduleData, setScheduleData] = useState([]);
-  // const [ticketData, setTicketData] = useState([]);
+  const [ticketsData, setTicketsData] = useState([]);
 
   useEffect(() => {
     fetch(envData.bands)
@@ -38,30 +40,28 @@ function App() {
       });
   }, []);
 
-  // useEffect(() => {
-  //   fetch(envData.reserveSpot)
-  //     .then((res) => res.json())
-  //     .then((tdata) => {
-  //       setTicketData(tdata);
-  //       console.log(tdata);
-  //     });
-  // }, []);
+  useEffect(() => {
+    fetch(envData.availableSpots)
+      .then((res) => res.json())
+      .then((tdata) => {
+        setTicketsData(tdata);
+        console.log(tdata);
+      });
+  }, []);
 
   return (
     <>
       <BandsContext.Provider value={bandsData}>
         <ScheduleContext.Provider value={scheduleData}>
           <LoginContext.Provider value={isLogin}>
-            {isLogin ? <FestApp /> : <RegApp />}
+            <TicketsContext.Provider value={ticketsData}>
+              {isLogin ? <FestApp /> : <RegApp />}
+            </TicketsContext.Provider>
           </LoginContext.Provider>
         </ScheduleContext.Provider>
       </BandsContext.Provider>
     </>
   );
-}
-
-function RegApp() {
-  return <h1>Faellestival</h1>;
 }
 
 export default App;
