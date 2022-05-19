@@ -3,15 +3,15 @@ import { BandsContext } from "./Contexts/BandsContext.js";
 import { LoginContext } from "./Contexts/LoginContext.js";
 import { TicketsContext } from "./Contexts/TicketsContext.js";
 
-// export const envData = {
-//   availableSpots: process.env.FAELLESTIVAL_AVAILABLE_SPOTS,
-//   bands: process.env.FAELLESTIVAL_BANDS,
-//   events: process.env.FAELLESTIVAL_EVENTS,
-//   fullfillReservation: process.env.FAELLESTIVAL_FULLFILL_RESERVATION,
-//   schedule: process.env.FAELLESTIVAL_SCHEDULE,
-//   reserveSpot: process.env.FAELLESTIVAL_RESERVE_SPOT,
-//   settings: process.env.FAELLESTIVAL_SETTINGS,
-// };
+export const envData = {
+  availableSpots: import.meta.env.VITE_FAELLESTIVAL_AVAILABLE_SPOTS,
+  bands: import.meta.env.VITE_FAELLESTIVAL_BANDS,
+  events: import.meta.env.VITE_FAELLESTIVAL_EVENTS,
+  fullfillReservation: import.meta.env.VITE_FAELLESTIVAL_FULLFILL_RESERVATION,
+  schedule: import.meta.env.VITE_FAELLESTIVAL_SCHEDULE,
+  reserveSpot: import.meta.env.VITE_FAELLESTIVAL_RESERVE_SPOT,
+  settings: import.meta.env.VITE_FAELLESTIVAL_SETTINGS,
+};
 
 function App() {
   const [bandsData, setBandsData] = useState([]);
@@ -19,7 +19,7 @@ function App() {
   const [scheduleData, setScheduleData] = useState([]);
 
   useEffect(() => {
-    fetch("https://a3m-festival.herokuapp.com/bands")
+    fetch(envData.bands)
       .then((res) => res.json())
       .then((data) => {
         setBandsData(data);
@@ -28,7 +28,7 @@ function App() {
   }, []);
 
   useEffect(() => {
-    fetch("https://a3m-festival.herokuapp.com/schedule")
+    fetch(envData.schedule)
       .then((res) => res.json())
       .then((sdata) => {
         setScheduleData(sdata);
