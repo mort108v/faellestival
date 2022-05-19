@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { BandsContext } from "./Contexts/BandsContext.js";
 import { LoginContext } from "./Contexts/LoginContext.js";
-import { TicketsContext } from "./Contexts/TicketsContext.js";
+// import { TicketsContext } from "./Contexts/TicketsContext.js";
+import { ScheduleContext } from "./Contexts/ScheduleContext.js";
 
 export const envData = {
   availableSpots: import.meta.env.VITE_FAELLESTIVAL_AVAILABLE_SPOTS,
@@ -17,6 +18,7 @@ function App() {
   const [bandsData, setBandsData] = useState([]);
   const [isLogin, setIsLogin] = useState(false);
   const [scheduleData, setScheduleData] = useState([]);
+  // const [ticketData, setTicketData] = useState([]);
 
   useEffect(() => {
     fetch(envData.bands)
@@ -35,14 +37,24 @@ function App() {
         console.log(sdata);
       });
   }, []);
+
+  // useEffect(() => {
+  //   fetch(envData.reserveSpot)
+  //     .then((res) => res.json())
+  //     .then((tdata) => {
+  //       setTicketData(tdata);
+  //       console.log(tdata);
+  //     });
+  // }, []);
+
   return (
     <>
       <BandsContext.Provider value={bandsData}>
-        <TicketsContext.Provider value={scheduleData}>
+        <ScheduleContext.Provider value={scheduleData}>
           <LoginContext.Provider value={isLogin}>
             {isLogin ? <FestApp /> : <RegApp />}
           </LoginContext.Provider>
-        </TicketsContext.Provider>
+        </ScheduleContext.Provider>
       </BandsContext.Provider>
     </>
   );
