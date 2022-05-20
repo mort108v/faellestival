@@ -5,6 +5,7 @@ import { TicketsContext } from "./Contexts/TicketsContext.js";
 import { ScheduleContext } from "./Contexts/ScheduleContext.js";
 import FestApp from "./components/FestApp";
 import RegApp from "./components/RegApp";
+import LineupPage from "./components/LineupPage.jsx";
 
 export const envData = {
   availableSpots: import.meta.env.VITE_FAELLESTIVAL_AVAILABLE_SPOTS,
@@ -49,15 +50,12 @@ function App() {
       });
   }, []);
 
-
   return (
     <>
       <BandsContext.Provider value={bandsData}>
         <ScheduleContext.Provider value={scheduleData}>
           <LoginContext.Provider value={{ isLogin, setIsLogin }}>
-            <TicketsContext.Provider value={ticketsData}>
-              {isLogin ? <FestApp /> : <RegApp />}
-            </TicketsContext.Provider>
+            <TicketsContext.Provider value={ticketsData}>{isLogin ? <FestApp /> : <RegApp />}</TicketsContext.Provider>
           </LoginContext.Provider>
         </ScheduleContext.Provider>
       </BandsContext.Provider>

@@ -1,17 +1,28 @@
 import React, { useContext } from "react";
-import { BandsContext } from "../Contexts/BandsContext";
+import { ScheduleContext } from "../Contexts/ScheduleContext";
+import NavBar from "./NavBar";
+import DayCard from "./DayCard";
 
 function LineupPage() {
-  const bandsData = useContext(BandsContext);
+  const scheduleDataArry = useContext(ScheduleContext);
 
-  function manageClick() {
-    console.log(bandsData);
-  }
+ 
   return (
-    <div>
-      <button onClick={manageClick}>click</button>
-      LineupPage
-    </div>
+    <>
+    
+    <NavBar/>
+    
+    <button onClick={scheduleData}>Click TO SEE LINEUP</button>
+
+      <DayCard
+      day='Weekday name'
+      firstArtist='Name of artist'
+      secondArtist='Name of artist'
+      thirdArtist='Name of artist'
+      forthArtist='Name of artist'></DayCard>
+    
+
+    </>
   );
 }
 
