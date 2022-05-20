@@ -1,11 +1,11 @@
 import React, { useContext } from "react";
-import { BandsContext } from "../Contexts/BandsContext";
+import { ScheduleContext } from "../Contexts/ScheduleContext";
 
 function LineupPage() {
-  const bandsData = useContext(BandsContext);
+  const scheduleData = useContext(ScheduleContext);
 
   function manageClick() {
-    console.log(bandsData);
+    console.log(scheduleData);
   }
   return (
     <div>
