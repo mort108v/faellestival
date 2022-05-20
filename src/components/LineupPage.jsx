@@ -1,21 +1,41 @@
 import React, { useContext } from "react";
+import { BandsContext } from "../Contexts/BandsContext";
 import { ScheduleContext } from "../Contexts/ScheduleContext";
 
 function LineupPage() {
   const scheduleData = useContext(ScheduleContext);
+  const bands = useContext(BandsContext);
 
-  // function manageClick() {
-  //   // console.log(scheduleData);
-  //   scheduleData.map(function(stage1, stage2, stage3) {
-  //     console.log(stage1.fri, stage2.fri, stage3.fri);
-  //   })
-  // }
+  let mondaybandsM = scheduleData.Midgard.mon; 
+  let mondaybandsV = scheduleData.Vanaheim.mon; 
+  let mondaybandsJ = scheduleData.Jotunheim.mon; 
+
+  // let WeekPlan = ;
+
+  // {weekPlan.map((timeslot) => {
+  //   if (timeslot.act.includes("break")) {} else {
+  //     return <DayCard data={{timeslot.act}} />
+  //   }})}
+  
+
+
   return (
     <div>
-lineup here
-      {scheduleData.map((stage) => ( <li>{stage}</li>))}
-      <button onClick={manageClick}>click</button>
-      LineupPage
+      {mondaybandsM.map((timeslot) => {
+      if (timeslot.act.includes("break")) {} else {
+        return <li>{timeslot.act}</li>
+      }})}
+            {mondaybandsV.map((timeslot) => {
+      if (timeslot.act.includes("break")) {} else {
+        return <li>{timeslot.act}</li>
+      }})}
+            {mondaybandsJ.map((timeslot) => {
+      if (timeslot.act.includes("break")) {} else {
+        return <li>{timeslot.act}</li>
+      }})}
+
+{/* <button onClick={manageClick}>consolelog</button>
+      LineupPage */}
     </div>
   );
 }
