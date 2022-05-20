@@ -13,7 +13,6 @@ import Footer from "./Footer";
 
 function RegApp() {
   const { setIsLogin } = useContext(LoginContext);
-  const contextsData = useContext(Contexts);
   const scheduleData = useContext(ScheduleContext);
   const bandsData = useContext(BandsContext);
   const ticketsData = useContext(TicketsContext);
@@ -27,7 +26,7 @@ function RegApp() {
   }
 
   function handleClick2() {
-    console.log(contextsData.bands);
+    console.log(bandsData);
   }
 
   return (
