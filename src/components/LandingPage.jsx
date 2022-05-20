@@ -1,15 +1,17 @@
 import React from "react";
-import {useState} from "react" ;
+import HeroSection from "./sections/HeroSection.jsx";
+import LineupSection from "./sections/LineupSection.jsx";
+import BannerSection from "./sections/BannerSection.jsx";
+import FaqSection from "./sections/FaqSection.jsx";
 
 function LandingPage(props) {
-function handleButton1() {
-  props.setShowLineup(true)
-  props.setShowLandPage(false);
-}
   return (
-  <div>LandingPage
-    <button onClick={handleButton1}>Im inside landing page , show lineup page</button>
-  </div>
+<main>
+  <HeroSection {...props}/>
+  <LineupSection {...props} />
+  <BannerSection />
+  <FaqSection {...props}/>
+</main>
   );
 }
 
