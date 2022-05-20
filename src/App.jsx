@@ -26,7 +26,7 @@ function App() {
       .then((res) => res.json())
       .then((tdata) => {
         setTicketsData(tdata);
-        console.log(tdata);
+        console.log(...tdata);
       });
   }, []);
 
@@ -45,11 +45,14 @@ function App() {
       // Then forward the arrays to be setState
       .then(([bands, events, schedule]) => {
         setScheduleData(schedule);
+        console.log(...schedule.Jotunheim.mon);
         setBandsData(bands);
+        console.log(...bands);
         setEventsData(events);
+        console.log(...events);
       })
-      .catch((e) => {
-        console.log(e);
+      .catch((error) => {
+        console.log(error);
       });
   }, []);
 

@@ -4,7 +4,6 @@ import { BandsContext } from "../Contexts/BandsContext.js";
 import { LoginContext } from "../Contexts/LoginContext.js";
 import { TicketsContext } from "../Contexts/TicketsContext.js";
 import { ScheduleContext } from "../Contexts/ScheduleContext.js";
-import { Contexts } from "../Contexts/Contexts.js";
 import LandingPage from "./LandingPage";
 import LineupPage from "./LineupPage";
 import TicketsPage from "./TicketsPage";
