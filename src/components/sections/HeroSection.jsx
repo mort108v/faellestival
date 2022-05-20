@@ -1,9 +1,9 @@
 import React from "react";
-import Header from "./SectionComps/Header.jsx";
-import Timer from "./SectionComps/Timer.jsx";
-import HeroTxt from "./SectionComps/HeroTxt.jsx";
-import BtnGrid from "./SectionComps/BtnGrid.jsx";
-import ScrollElm from "./SectionComps/ScrollElm.jsx";
+import Header from "./Header.jsx";
+import Timer from "./Timer.jsx";
+import HeroTxt from "./HeroTxt.jsx";
+import BtnGrid from "./BtnGrid.jsx";
+import ScrollElm from "./ScrollElm.jsx";
 
 
 function HeroSection(props) {
