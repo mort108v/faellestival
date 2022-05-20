@@ -1,29 +1,29 @@
 import React, { useContext } from "react";
 import { ScheduleContext } from "../Contexts/ScheduleContext";
-import NavBar from "./NavBar";
 import DayCard from "./DayCard";
 
 function LineupPage() {
-  const scheduleDataArry = useContext(ScheduleContext);
+  const scheduleData = useContext(ScheduleContext);
+  console.log(scheduleData)
+  const scheduleArry = Object.entries(scheduleData.Midgard.mon)
+  scheduleArry.map((el)=> (
+    console.log("Elements:",el.act)
+  ))
+  // const {mon} = scheduleData.Midgard
+  // console.log({mon})
 
- 
+
+  
   return (
+    
     <>
-    
-    <NavBar/>
-    
-    <button onClick={scheduleData}>Click TO SEE LINEUP</button>
-
-      <DayCard
-      day='Weekday name'
-      firstArtist='Name of artist'
-      secondArtist='Name of artist'
-      thirdArtist='Name of artist'
-      forthArtist='Name of artist'></DayCard>
+      {scheduleArry.map((days)=>(
+     <div>{days[0]}</div>
+  ))}
     
 
-    </>
-  );
-}
+  </>
+  )
+  }
 
-export default LineupPage;
+export default LineupPage
