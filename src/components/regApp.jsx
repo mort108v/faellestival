@@ -10,7 +10,7 @@ import TicketsPage from "./TicketsPage";
 import Footer from "./Footer";
 
 function RegApp() {
-  const { setIsLogin } = useContext(LoginContext);
+  const  { setIsLogin }  = useContext(LoginContext);
   const scheduleData = useContext(ScheduleContext);
   const bandsData = useContext(BandsContext);
   const ticketsData = useContext(TicketsContext);
@@ -27,8 +27,8 @@ function RegApp() {
   return (
     <>
       <LandingPage />
-      <button onClick={handleClick}>Click</button>
-      <button onClick={handleClick2}>Click2</button>
+      <button onClick={handleClick}>Click LOGIN</button>
+      <button onClick={handleClick2}>Click2 SHOW BANDS</button>
 
       <LineupPage />
       <TicketsPage />

@@ -49,11 +49,12 @@ function App() {
       });
   }, []);
 
+
   return (
     <>
       <BandsContext.Provider value={bandsData}>
         <ScheduleContext.Provider value={scheduleData}>
-          <LoginContext.Provider value={isLogin}>
+          <LoginContext.Provider value={{ isLogin, setIsLogin }}>
             <TicketsContext.Provider value={ticketsData}>
               {isLogin ? <FestApp /> : <RegApp />}
             </TicketsContext.Provider>
