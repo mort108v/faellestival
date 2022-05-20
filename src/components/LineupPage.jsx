@@ -6,10 +6,13 @@ function LineupPage() {
   const scheduleData = useContext(ScheduleContext);
   const bands = useContext(BandsContext);
 
-  let mondaybandsM = scheduleData.Midgard.mon; 
-  let mondaybandsV = scheduleData.Vanaheim.mon; 
-  let mondaybandsJ = scheduleData.Jotunheim.mon; 
-
+  
+  let monBands = [...scheduleData.Jotunheim.mon, ...scheduleData.Vanaheim.mon, ...scheduleData.Midgard.mon];
+  let tuesBands = [...scheduleData.Jotunheim.tue, ...scheduleData.Vanaheim.tue, ...scheduleData.Midgard.tue];
+  // let mondaybandsV = scheduleData.Vanaheim.mon; 
+  // let mondaybandsJ = scheduleData.Jotunheim.mon; 
+  
+  let dayProgram = [...monBands, ...tuesBands];
   // let WeekPlan = ;
 
   // {weekPlan.map((timeslot) => {
@@ -21,18 +24,18 @@ function LineupPage() {
 
   return (
     <div>
-      {mondaybandsM.map((timeslot) => {
+      {dayProgram.map((timeslot) => {
       if (timeslot.act.includes("break")) {} else {
         return <li>{timeslot.act}</li>
       }})}
-            {mondaybandsV.map((timeslot) => {
+            {/* {mondaybandsV.map((timeslot) => {
       if (timeslot.act.includes("break")) {} else {
         return <li>{timeslot.act}</li>
       }})}
             {mondaybandsJ.map((timeslot) => {
       if (timeslot.act.includes("break")) {} else {
         return <li>{timeslot.act}</li>
-      }})}
+      }})} */}
 
 {/* <button onClick={manageClick}>consolelog</button>
       LineupPage */}
