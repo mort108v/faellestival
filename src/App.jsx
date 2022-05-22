@@ -5,6 +5,8 @@ import { TicketsContext } from "./Contexts/TicketsContext.js";
 import { ScheduleContext } from "./Contexts/ScheduleContext.js";
 import FestApp from "./components/FestApp";
 import RegApp from "./components/RegApp";
+import "./scss/_app.scss";
+
 
 export const envData = {
   availableSpots: import.meta.env.VITE_FAELLESTIVAL_AVAILABLE_SPOTS,

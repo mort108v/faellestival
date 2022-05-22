@@ -1,5 +1,5 @@
 import React from 'react';
-import Btn from "../UI/Btn.jsx";
+import Btn from "./UI/Btn.jsx";
 import FullLineup from "./FullLineup.jsx";
 
 
@@ -11,7 +11,7 @@ function LineupSection(props) {
     }
     return (
 <section>
-    <FullLineup />
+    <FullLineup className="gradient-txt" />
     <p>And More...</p>
     <Btn content="Full Line Up" action={goToLineup} />
 </section>

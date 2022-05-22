@@ -9,7 +9,7 @@ import ScrollElm from "./ScrollElm.jsx";
 function HeroSection(props) {
   return (
       <section>
-          <Header setIsLogin={props.setIsLogin} />
+          <Header className="header" setIsLogin={props.setIsLogin} />
           <Timer />
           <HeroTxt />
           <BtnGrid {...props} />

@@ -29,7 +29,7 @@ function RegApp() {
   }
 
   return (
-    <>
+    <body>
     <NavBar setShowTicketsPage={setShowTicketsPage} setShowLineup={setShowLineup} setShowLandPage={setShowLandPage} isLogin={setIsLogin} />
    { showLandPage &&   <LandingPage  setShowTicketsPage={setShowTicketsPage} setShowLineup={setShowLineup} setShowLandPage={setShowLandPage}/> }
    { showLineup && <LineupPage setShowTicketsPage={setShowTicketsPage} setShowLineup={setShowLineup} setShowLandPage={setShowLandPage}  />}
@@ -37,7 +37,7 @@ function RegApp() {
       <button onClick={handleClick}>Click LOGIN</button> 
        <button onClick={handleClick2}>Click2 SHOW BANDS</button>
       <Footer />
-    </>
+    </body>
   );
 }
 

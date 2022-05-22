@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { BandsContext } from "../Contexts/BandsContext";
+// import { BandsContext } from "../Contexts/BandsContext";
 import { ScheduleContext } from "../Contexts/ScheduleContext";
 
 function LineupPage() {

@@ -20,14 +20,14 @@ function FestApp() {
   <button onClick={handleClick}>Click</button>;
 
   return (
-    <>
+    <body>
       <NavBar />
       <FestLandPage />
       <ArtistPage />
       <ProgramPage />
       <FaellesCardPage />
       <Footer />
-    </>
+    </body>
   );
 }
 
