@@ -23,11 +23,25 @@ let x = setInterval(function() {
 
     return (
         <div>
-            <Days />
-
-            <Hours />
-            <Minutes />
-            <Seconds />
+        <div>
+            <p>{x}</p>
+            <p>Days</p>
+        </div>
+            {/* •
+            <div>
+            <p>{hours}</p>
+            <p>Hours</p>
+        </div>
+            •
+            <div>
+            <p>{minutes}</p>
+            <p>Minutes</p>
+        </div>
+            •
+            <div>
+            <p>{seconds}</p>
+            <p>Seconds</p>
+        </div> */}
         </div>
     )
 }
