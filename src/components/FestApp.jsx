@@ -1,7 +1,7 @@
 import React from "react";
 import { useContext } from "react";
 import Footer from "./Footer";
-import NavBar from "./NavBar";
+import NavBar from "./UI/NavBar";
 import FestLandPage from "./FestLandPage";
 import ArtistPage from "./ArtistPage";
 import ProgramPage from "./ProgramPage";

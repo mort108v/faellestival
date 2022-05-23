@@ -1,6 +1,6 @@
 import React, {useContext} from 'react';
-import { BandsContext } from "../Contexts/BandsContext";
-import Artist from "./Artist"
+import { BandsContext } from "../../Contexts/BandsContext";
+import Artist from "../Artist"
 
 
 function FullLineup(props) {

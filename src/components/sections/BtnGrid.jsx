@@ -1,5 +1,5 @@
 import React from 'react'
-import Btn from "./UI/Btn.jsx";
+import Btn from "../UI/Btn.jsx";
 
 function BtnGrid(props) {
 

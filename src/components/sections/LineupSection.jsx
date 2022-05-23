@@ -1,8 +1,7 @@
 import React from 'react';
-import Btn from "./UI/Btn.jsx";
+import Btn from "../UI/Btn.jsx";
 import FullLineup from "./FullLineup.jsx";
-import styles from "../scss/_landPage.module.scss";
-
+import styles from "../../scss/_landPage.module.scss";
 
 function LineupSection(props) {
     function goToLineup() {
