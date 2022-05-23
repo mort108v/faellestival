@@ -4,7 +4,9 @@ import { ScheduleContext } from "../Contexts/ScheduleContext";
 
 function LineupPage() {
   const scheduleData = useContext(ScheduleContext);
-  const bands = useContext(BandsContext);
+  // const bands = useContext(BandsContext);
+  // mondayData = {day: "Monday", date: "July 27th"};
+
 
   
   let monBands = [...scheduleData.Jotunheim.mon, ...scheduleData.Vanaheim.mon, ...scheduleData.Midgard.mon];

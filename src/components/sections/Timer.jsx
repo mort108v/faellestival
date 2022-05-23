@@ -1,5 +1,6 @@
 import React from 'react'
 
+
 function Timer() {
     // Set the date we're counting down to
 let countDownDate = new Date("Jul 26, 2022 15:37:25").getTime();
