@@ -1,6 +1,7 @@
 import React from 'react';
 import Btn from "./UI/Btn.jsx";
 import FullLineup from "./FullLineup.jsx";
+import styles from "../scss/_landPage.module.scss";
 
 
 function LineupSection(props) {
@@ -11,7 +12,7 @@ function LineupSection(props) {
     }
     return (
 <section>
-    <FullLineup className="gradient-txt" />
+    <FullLineup styles={styles.lineupTxt} />
     <p>And More...</p>
     <Btn content="Full Line Up" action={goToLineup} />
 </section>
