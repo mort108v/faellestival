@@ -1,14 +1,22 @@
-import React from 'react';
-import content from "/public/content.json";
+import React from "react";
 import TicketCard from "../UI/TicketCard";
 
 function CardGrid(props) {
-    return (
-        <div>
-            {content.map((ticket) => <TicketCard contentClass="ticketContent" head={ticket.ticketOpt} content={ticket.specs} price={ticket.price} key={Math.random()} {...props} />)
-}
-        </div>
-    )
+  const ticketContent = props.ticketContent;
+  return (
+    <div>
+      {ticketContent.map((ticket) => (
+        <TicketCard
+          contentClass="ticketContent"
+          head={ticket.ticketOpt}
+          content={ticket.specs}
+          price={ticket.price}
+          key={Math.random()}
+          {...props}
+        />
+      ))}
+    </div>
+  );
 }
 
-export default CardGrid
+export default CardGrid;

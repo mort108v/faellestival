@@ -10,8 +10,9 @@ export default defineConfig({
         rollupOptions: {
             input: {
                 main: resolve(__dirname, './src/main.jsx'),
-
+                root: './'
             }
         }
     }
+
 })

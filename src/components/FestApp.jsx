@@ -8,7 +8,7 @@ import ProgramPage from "./ProgramPage";
 import FaellesCardPage from "./FaellesCardPage";
 import { BandsContext } from "../Contexts/BandsContext.js";
 import { LoginContext } from "../Contexts/LoginContext.js";
-import { TicketsContext } from "../Contexts/TicketsContext.js";
+import { AvailableContext } from "../Contexts/AvailableContext.js";
 import { ScheduleContext } from "../Contexts/ScheduleContext.js";
 
 function FestApp() {

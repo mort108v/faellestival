@@ -3,10 +3,10 @@ import { BandsContext } from "./Contexts/BandsContext.js";
 import { LoginContext } from "./Contexts/LoginContext.js";
 import { TicketsContext } from "./Contexts/TicketsContext.js";
 import { ScheduleContext } from "./Contexts/ScheduleContext.js";
+import { AvailableContext } from "./Contexts/AvailableContext.js";
 import FestApp from "./components/FestApp";
 import RegApp from "./components/RegApp";
 import styles from "./scss/_app.scss";
-
 
 export const envData = {
   availableSpots: import.meta.env.VITE_FAELLESTIVAL_AVAILABLE_SPOTS,
@@ -23,6 +23,17 @@ function App() {
   const [isLogin, setIsLogin] = useState(false);
   const [scheduleData, setScheduleData] = useState([]);
   const [ticketsData, setTicketsData] = useState([]);
+  const [availableData, setAvailable] = useState({});
+  const ticketsJsonFile = "./content.json";
+
+  useEffect(() => {
+    fetch(ticketsJsonFile)
+      .then((res) => res.json())
+      .then((data) => {
+        setTicketsData(data);
+        console.log(data);
+      });
+  }, []);
 
   useEffect(() => {
     fetch(envData.bands)
@@ -46,11 +57,10 @@ function App() {
     fetch(envData.availableSpots)
       .then((res) => res.json())
       .then((tdata) => {
-        setTicketsData(tdata);
+        setAvailable(tdata);
         console.log(tdata);
       });
   }, []);
-
 
   return (
     <>
@@ -58,7 +68,9 @@ function App() {
         <ScheduleContext.Provider value={scheduleData}>
           <LoginContext.Provider value={{ isLogin, setIsLogin }}>
             <TicketsContext.Provider value={ticketsData}>
-              {isLogin ? <FestApp /> : <RegApp />}
+              <AvailableContext.Provider value={availableData}>
+                {isLogin ? <FestApp /> : <RegApp />}
+              </AvailableContext.Provider>
             </TicketsContext.Provider>
           </LoginContext.Provider>
         </ScheduleContext.Provider>
