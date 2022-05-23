@@ -35,7 +35,6 @@ function RegApp() {
    { showLineup && <LineupPage setShowTicketsPage={setShowTicketsPage} setShowLineup={setShowLineup} setShowLandPage={setShowLandPage}  />}
    { showTicketsPage && <TicketsPage setShowTicketsPage={setShowTicketsPage} setShowLineup={setShowLineup} setShowLandPage={setShowLandPage} />}
       <button onClick={handleClick}>Click LOGIN</button> 
-       <button onClick={handleClick2}>Click2 SHOW BANDS</button>
       <Footer />
     </body>
   );

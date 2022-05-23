@@ -6,7 +6,7 @@ import OrderForm from "./sections/OrderForm";
 
 
 
-  function TicketsPage() {
+  function TicketsPage(props) {
   const ticketsData = useContext(TicketsContext);
   const [showForm, setShowForm] = useState(false);
   const [soldOut, setSoldOut] = useState(false);
@@ -18,7 +18,7 @@ import OrderForm from "./sections/OrderForm";
 
   return (
   <section>
-      <Main content="Tickets" bc="Main" />
+      <Main content="Tickets" bcReg="Main" {...props} />
       <CardGrid setShowForm={setShowForm} soldOut={soldOut} />
       {showForm && <OrderForm setShowForm={setShowForm} /> }
   </section>
