@@ -1,6 +1,6 @@
 import React from 'react'
 import HeaderBg from "../HeaderBg";
-import Logo from "../Logo";
+import Logo from "../UI/Logo";
 import HeroTitle from "../HeroTitle";
 
 
