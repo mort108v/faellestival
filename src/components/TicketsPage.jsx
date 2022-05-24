@@ -1,14 +1,14 @@
 import React, { useState, useContext } from "react";
-import { TicketsContext } from "../Contexts/TicketsContext";
-import { AvailableContext } from "../Contexts/AvailableContext";
-import Main from "./sections/Main";
+import { TicketsContext } from "../Contexts/TicketsContext.js";
+import { AvailableContext } from "../Contexts/AvailableContext.js";
+import MainSect from "./sections/MainSect";
 import CardGrid from "./sections/CardGrid";
 import OrderForm from "./sections/OrderForm";
 //  import ticketContent from "./content.json?raw";
 
 function TicketsPage(props) {
   const ticketsData = useContext(AvailableContext);
-  const ticketContent = useContext(TicketsContext);
+  const ticketsContent = useContext(TicketsContext);
   const [showForm, setShowForm] = useState(false);
   const [soldOut, setSoldOut] = useState(false);
 
@@ -22,9 +22,9 @@ function TicketsPage(props) {
 
   return (
     <section>
-      <Main content="Tickets" bcReg="Main" {...props} />
+      <MainSect content="Tickets" bcReg="Main" {...props} />
       <CardGrid
-        ticketContent={ticketContent}
+        ticketsContent={ticketsContent}
         setShowForm={setShowForm}
         soldOut={soldOut}
       />

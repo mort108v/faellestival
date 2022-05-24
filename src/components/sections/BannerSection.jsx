@@ -1,15 +1,22 @@
-import React from 'react';
-import Banner from '../UI/Banner';
+import React, {useState} from "react";
+import Banner from "../UI/Banner";
 
 function BannerSection() {
-    return (
-        <section>
-            <Banner content="7 Days" className="banner1"/>
-            <Banner type="stages" className="banner2"/>
-            <Banner type="bandsQty" className="banner1"/>
-            <Banner type="genre" className="banner2"/>
-        </section>
-    )
+const [count, setCount] = useState(0)
+const data = ["7 Days", "3 Stages"]
+  return (
+    <section>
+      <Banner className="banner1">
+          {data[0]}
+      </Banner>
+      {/* <Banner className="banner2">
+          3 Stages
+      </Banner> */}
+      {/* <Banner type="bandsQty" className="banner1" />
+
+      <Banner type="genre" className="banner2" /> */}
+    </section>
+  );
 }
 
-export default BannerSection
+export default BannerSection;
