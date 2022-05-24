@@ -1,6 +1,6 @@
 import React, {useContext} from 'react';
 import { BandsContext } from "../../Contexts/BandsContext";
-import Artist from "../Artist"
+import Artist from "../UI/Artist";
 
 
 function FullLineup(props) {
@@ -13,7 +13,7 @@ function FullLineup(props) {
 
     return (
         <>
-          <p styles={props.styles}>
+          <p >
               {artists.map((artist) => <Artist key={Math.random()} content={artist.name} />)}
           </p>
         </>

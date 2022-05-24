@@ -30,6 +30,10 @@
 
 @import "./config.modules";
 
+:root {
+  --img: url("https://faellestival.dk/wp/wp-content/uploads/2018/09/cropped-MG_8034-1.jpg");
+}
+
 body {
   margin: 0;
   box-sizing: border-box;
@@ -176,3 +180,49 @@ button {
 //   -webkit-background-clip: text;
 //   -webkit-text-fill-color: transparent;
 // }
+
+.artistGrid {
+  display: flex;
+  margin-inline: 2rem;
+  gap: 2rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  background-color: $dark-poster;
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+}
+
+.artistCard {
+  background-image: var(--img);
+  background-color: none;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  border: none;
+  border-radius: $card-border;
+  height: 40vh;
+  min-width: 20vw;
+  max-width: 20vw;
+  // text-overflow: ellipsis;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  box-shadow: $card-shadow;
+
+  h2 {
+    color: white;
+    font-family: $body-font;
+    text-transform: uppercase;
+    text-align: center;
+    opacity: 0;
+    transition: opacity 0.7s;
+  }
+  &:hover {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.13), rgb(0, 0, 0)),
+      var(--img);
+    box-shadow: $hov-card-sh;
+  }
+  &:hover h2 {
+    opacity: 1;
+  }
+}

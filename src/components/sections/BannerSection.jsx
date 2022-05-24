@@ -1,7 +1,7 @@
 import React, { useState, useContext} from "react";
 import { BandsContext } from "../../Contexts/BandsContext.js";
 import Banner from "../UI/Banner";
-import Artist from "../Artist";
+import Artist from "../UI/Artist";
 
 function BannerSection() {
   const [count, setCount] = useState(0);
