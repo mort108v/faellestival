@@ -9,32 +9,62 @@ import LandingPage from "./LandingPage";
 import LineupPage from "./LineupPage";
 import TicketsPage from "./TicketsPage";
 import Footer from "./Footer";
+import FaqPage from "./FaqPage.jsx";
 
 function RegApp() {
-  const  { setIsLogin }  = useContext(LoginContext);
+  const { setIsLogin } = useContext(LoginContext);
   const scheduleData = useContext(ScheduleContext);
   const bandsData = useContext(BandsContext);
   const ticketsData = useContext(TicketsContext);
-  const [showLineup, setShowLineup ] = useState(false); 
+  const [showLineup, setShowLineup] = useState(false);
   const [showLandPage, setShowLandPage] = useState(true);
   const [showTicketsPage, setShowTicketsPage] = useState(false);
+  const [showFaqPage, setShowFaqPage] = useState(false);
 
   function handleClick() {
     console.log("login");
     setIsLogin(true);
   }
 
-  function handleClick2() {
-    console.log(bandsData);
-  }
-
   return (
     <>
-    <NavBar setShowTicketsPage={setShowTicketsPage} setShowLineup={setShowLineup} setShowLandPage={setShowLandPage} isLogin={setIsLogin} />
-   { showLandPage &&   <LandingPage  setShowTicketsPage={setShowTicketsPage} setShowLineup={setShowLineup} setShowLandPage={setShowLandPage}/> }
-   { showLineup && <LineupPage setShowTicketsPage={setShowTicketsPage} setShowLineup={setShowLineup} setShowLandPage={setShowLandPage}  />}
-   { showTicketsPage && <TicketsPage setShowTicketsPage={setShowTicketsPage} setShowLineup={setShowLineup} setShowLandPage={setShowLandPage} />}
-      <button onClick={handleClick}>Click LOGIN</button> 
+      <NavBar
+        setShowTicketsPage={setShowTicketsPage}
+        setShowLineup={setShowLineup}
+        setShowLandPage={setShowLandPage}
+        isLogin={setIsLogin}
+      />
+      {showLandPage && (
+        <LandingPage
+          setShowTicketsPage={setShowTicketsPage}
+          setShowLineup={setShowLineup}
+          setShowLandPage={setShowLandPage}
+          setShowFaqPage={setShowFaqPage}
+        />
+      )}
+      {showLineup && (
+        <LineupPage
+          setShowTicketsPage={setShowTicketsPage}
+          setShowLineup={setShowLineup}
+          setShowLandPage={setShowLandPage}
+        />
+      )}
+      {showTicketsPage && (
+        <TicketsPage
+          setShowTicketsPage={setShowTicketsPage}
+          setShowLineup={setShowLineup}
+          setShowLandPage={setShowLandPage}
+        />
+      )}
+      {showFaqPage && (
+        <FaqPage
+          setShowTicketsPage={setShowTicketsPage}
+          setShowLineup={setShowLineup}
+          setShowLandPage={setShowLandPage}
+          setShowFaqPage={setShowFaqPage}
+        />
+      )}
+      <button onClick={handleClick}>Click LOGIN</button>
       <Footer />
     </>
   );
