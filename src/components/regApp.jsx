@@ -1,9 +1,9 @@
 import React from "react";
 import { useContext, useState } from "react";
-import { BandsContext } from "../Contexts/BandsContext.js";
+// import { BandsContext } from "../Contexts/BandsContext.js";
 import { LoginContext } from "../Contexts/LoginContext.js";
-import { TicketsContext } from "../Contexts/TicketsContext.js";
-import { ScheduleContext } from "../Contexts/ScheduleContext.js";
+// import { TicketsContext } from "../Contexts/TicketsContext.js";
+// import { ScheduleContext } from "../Contexts/ScheduleContext.js";
 import NavBar from "./UI/NavBar.jsx";
 import LandingPage from "./LandingPage";
 import LineupPage from "./LineupPage";
@@ -13,9 +13,9 @@ import FaqPage from "./FaqPage.jsx";
 
 function RegApp() {
   const { setIsLogin } = useContext(LoginContext);
-  const scheduleData = useContext(ScheduleContext);
-  const bandsData = useContext(BandsContext);
-  const ticketsData = useContext(TicketsContext);
+  // const scheduleData = useContext(ScheduleContext);
+  // const bandsData = useContext(BandsContext);
+  // const ticketsData = useContext(TicketsContext);
   const [showLineup, setShowLineup] = useState(false);
   const [showLandPage, setShowLandPage] = useState(true);
   const [showTicketsPage, setShowTicketsPage] = useState(false);
