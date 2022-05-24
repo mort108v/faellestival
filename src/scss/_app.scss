@@ -5,7 +5,8 @@
 // }
 // //VARIABLES
 // $display-font: "display", sans-serif;
-// $body-font: "Montserrat", sans-serif;
+// $body-font: "Montserrat",
+// sans-serif;
 // $sec-font: system-ui;
 // $card-border: 10px;
 // $card-shadow: 1px 1px 8px rgba(0, 0, 0, 0.548);
@@ -27,7 +28,8 @@
 // );
 // $yellow: #e89832;
 // $orange: #dc6940;
-@import "./config";
+@import "config";
+@import "./sections/lineup";
 body {
     margin: 0;
     box-sizing: border-box;

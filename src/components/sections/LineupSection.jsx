@@ -1,7 +1,8 @@
 import React from "react";
 import Btn from "../UI/Btn.jsx";
 import FullLineup from "./FullLineup.jsx";
-import styles from "../../scss/_landPage.scss";
+// import styles from "../../scss/sections/_lineup.scss";
+// const styles = resolve('./')
 
 function LineupSection(props) {
   function goToLineup() {
@@ -10,8 +11,8 @@ function LineupSection(props) {
     props.setShowLineupPage(true);
   }
   return (
-    <section>
-      <FullLineup styles={styles.lineupTxt} />
+    <section className={"lineupTxt"}>
+      <FullLineup />
       <p>And More...</p>
       <Btn content="Full Line Up" action={goToLineup} />
     </section>
