@@ -1,14 +1,16 @@
 import React, {useState, useContext} from "react";
 import { TicketsContext } from "../Contexts/TicketsContext.js";
-import Main from "./sections/Main";
+import { AvailableContext } from "../Contexts/AvailableContext.js";
+import MainSect from "./sections/MainSect";
 import CardGrid from "./sections/CardGrid";
 import OrderForm from "./sections/OrderForm";
 
 
 
   function TicketsPage(props) {
-  const ticketsData = useContext(TicketsContext);
-  const [showForm, setShowForm] = useState(false);
+    const ticketsData = useContext(AvailableContext);
+    const ticketsContent = useContext(TicketsContext);
+    const [showForm, setShowForm] = useState(false);
   const [soldOut, setSoldOut] = useState(false);
 
   //check if there is tickets available
@@ -18,8 +20,8 @@ import OrderForm from "./sections/OrderForm";
 
   return (
   <section>
-      <Main content="Tickets" bcReg="Main" {...props} />
-      <CardGrid setShowForm={setShowForm} soldOut={soldOut} />
+      <MainSect content="Tickets" bcReg="Main" {...props} />
+      <CardGrid ticketsContent={ticketsContent} setShowForm={setShowForm} soldOut={soldOut} />
       {showForm && <OrderForm setShowForm={setShowForm} /> }
   </section>
 

@@ -3,7 +3,7 @@ import Breadcrumbs from "../UI/Breadcrumbs";
 import HeaderBg from "../HeaderBg";
 import MainTitle from "../UI/MainTitle";
 
-function Main(props) {
+function MainSect(props) {
   function goToRegApp() {
     props.setShowTicketsPage(false);
     props.setShowLineup(false);
@@ -31,4 +31,4 @@ function Main(props) {
   );
 }
 
-export default Main;
+export default MainSect;
