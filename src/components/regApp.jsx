@@ -29,14 +29,14 @@ function RegApp() {
   }
 
   return (
-    <body>
+    <>
     <NavBar setShowTicketsPage={setShowTicketsPage} setShowLineup={setShowLineup} setShowLandPage={setShowLandPage} isLogin={setIsLogin} />
    { showLandPage &&   <LandingPage  setShowTicketsPage={setShowTicketsPage} setShowLineup={setShowLineup} setShowLandPage={setShowLandPage}/> }
    { showLineup && <LineupPage setShowTicketsPage={setShowTicketsPage} setShowLineup={setShowLineup} setShowLandPage={setShowLandPage}  />}
    { showTicketsPage && <TicketsPage setShowTicketsPage={setShowTicketsPage} setShowLineup={setShowLineup} setShowLandPage={setShowLandPage} />}
       <button onClick={handleClick}>Click LOGIN</button> 
       <Footer />
-    </body>
+    </>
   );
 }
 

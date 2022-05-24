@@ -1,6 +1,6 @@
-import React, {useContext} from 'react';
-import { BandsContext } from "../../Contexts/BandsContext.js";
-import { ScheduleContext } from "../../Contexts/ScheduleContext.js";
+import React from 'react';
+// import { BandsContext } from "../../Contexts/BandsContext.js";
+// import { ScheduleContext } from "../../Contexts/ScheduleContext.js";
 
 function Banner(props) {
     return (
