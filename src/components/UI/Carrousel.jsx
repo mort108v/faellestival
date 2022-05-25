@@ -4,26 +4,80 @@ import ArtistCard from "./ArtistCard.jsx";
 import ScrollElm from "../sections/ScrollElm";
 
 function Carrousel(props) {
-    const [pickedId, setPickedId] = useState();
-      const artists = useContext(BandsContext);
-      function showNext() {
-          console.log("showNext")
-      }
+  const [pic1, setPick1] = useState(0);
+  const [pic2, setPick2] = useState(1);
+  const [pic3, setPick3] = useState(2);
+  const [pic4, setPick4] = useState(3);
+  const [pickedId, setPickedId] = useState();
+  const artists = useContext(BandsContext);
 
-      function showPrev() {
-        console.log("showPrev")
-    }
+  function showNext() {
+    console.log("showNext");
+    setPick1((old) => old + 4);
+    setPick2((old) => old + 4);
+    setPick3((old) => old + 4);
+    setPick4((old) => old + 4);
+  }
 
+  function showPrev() {
+    console.log("showPrev");
+    setPick1((old) => old - 4);
+    setPick2((old) => old - 4);
+    setPick3((old) => old - 4);
+    setPick4((old) => old - 4);
+  }
 
   return (
     <div className="carrousel">
       <ScrollElm className="prev" action={showPrev} />
       <article className="artistGrid">
-      {artists.map((artist) => <ArtistCard key={artist.id} content={artist.name} className="artistCard" img={artist.logo} action={function() {
-          setPickedId(artist.id);
-          console.log("gotoArtist", pickedId);
-      }
-} />)}
+        <ArtistCard
+          key={pic1}
+          id={artists[pic1].name}
+          content={artists[pic1].name}
+          className="artistCard"
+          img={artists[pic1].logo}
+          action={() => {
+            setPickedId(artists[pic1].name);
+            console.log("gotoArtist", pickedId);
+          }}
+        />
+
+        <ArtistCard
+          key={pic2}
+          id={artists[pic2].name}
+          content={artists[pic2].name}
+          className="artistCard"
+          img={artists[pic2].logo}
+          action={() => {
+            setPickedId(artists[pic2].name);
+            console.log("gotoArtist", pickedId);
+          }}
+        />
+
+        <ArtistCard
+          key={pic3}
+          id={artists[pic3].name}
+          content={artists[pic3].name}
+          className="artistCard"
+          img={artists[pic3].logo}
+          action={() => {
+            setPickedId(artists[pic3].name);
+            console.log("gotoArtist", pickedId);
+          }}
+        />
+
+        <ArtistCard
+          key={pic4}
+          id={artists[pic4].name}
+          content={artists[pic4].name}
+          className="artistCard"
+          img={artists[pic4].logo}
+          action={() => {
+            setPickedId(artists[pic4].name);
+            console.log("gotoArtist", pickedId);
+          }}
+        />
       </article>
       <ScrollElm className="next" action={showNext} />
     </div>
