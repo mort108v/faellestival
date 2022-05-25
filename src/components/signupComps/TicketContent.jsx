@@ -1,10 +1,10 @@
 import React from "react";
-import CheckboxHandler from "./CheckboxHandler";
+import CheckboxContent from "./CheckboxContent";
 
 function TicketContent(props, index) {
   return (
     <div>
-      <CheckboxHandler content={props.content} name={props.name} key={index} />
+      <CheckboxContent props={props} key={index} />
     </div>
   );
 }

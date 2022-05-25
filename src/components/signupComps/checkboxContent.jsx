@@ -1,8 +1,17 @@
-import React from "react";
 import React, { Component } from "react";
 import Checkbox from "./Checkbox";
 
-const OPTIONS = ["One Day", "Weekend", "Partout"];
+// const OPTIONS = ["One Day", "Weekend", "Partout"];
+const OPTIONS = [
+  "Standard",
+  "VIP",
+  "One Day",
+  "Weekend",
+  "Partout",
+  "Agree to Terms",
+  "Agree on Social",
+];
+
 class checkboxContent extends Component {
   state = {
     checkboxes: OPTIONS.reduce(
@@ -16,7 +25,7 @@ class checkboxContent extends Component {
 
   selectAllCheckboxes = (isSelected) => {
     Object.keys(this.state.checkboxes).forEach((checkbox) => {
-      // BONUS: Can you explain why we pass updater function to setState instead of an object?
+      // we pass updater function to setState instead of an object
       this.setState((prevState) => ({
         checkboxes: {
           ...prevState.checkboxes,

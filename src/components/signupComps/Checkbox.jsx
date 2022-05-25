@@ -1,37 +1,18 @@
 import React from "react";
 
-function Checkbox() {
-  return (
-    <div className="container">
-      <div className="row mt-5">
-        <div className="col-sm-12">
-          <form onSubmit={this.handleFormSubmit}>
-            {this.createCheckboxes()}
-
-            <div className="form-group mt-2">
-              <button
-                type="button"
-                className="btn btn-outline-primary mr-2"
-                onClick={this.selectAll}
-              >
-                Select All
-              </button>
-              <button
-                type="button"
-                className="btn btn-outline-primary mr-2"
-                onClick={this.deselectAll}
-              >
-                Deselect All
-              </button>
-              <button type="submit" className="btn btn-primary">
-                Save
-              </button>
-            </div>
-          </form>
-        </div>
-      </div>
-    </div>
-  );
-}
+const Checkbox = ({ label, isSelected, onCheckboxChange }) => (
+  <div className="form-check">
+    <label>
+      <input
+        type="checkbox"
+        name={label}
+        checked={isSelected}
+        onChange={onCheckboxChange}
+        className="form-check-input"
+      />
+      {label}
+    </label>
+  </div>
+);
 
 export default Checkbox;

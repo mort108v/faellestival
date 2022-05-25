@@ -34,7 +34,7 @@ function TicketForm() {
     "agreeTerms",
     "agreeSocial",
   ];
-  const divFill = [(className = "")];
+  // const divFill = [(className = "")];
 
   const FormTitles = ["Sign Up", "Select Tickets", "Personal Info", "Other"];
 
