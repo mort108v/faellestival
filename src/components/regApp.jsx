@@ -64,7 +64,12 @@ function RegApp() {
         />
       )}
       <button onClick={handleClick}>Click LOGIN</button>
-      <Footer />
+      <Footer
+        setShowTicketsPage={setShowTicketsPage}
+        setShowLineup={setShowLineup}
+        setShowLandPage={setShowLandPage}
+        setShowFaqPage={setShowFaqPage}
+      />
     </>
   );
 }
