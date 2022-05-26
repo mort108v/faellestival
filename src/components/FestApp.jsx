@@ -58,7 +58,12 @@ function FestApp() {
           setShowFCardPage={setShowFCardPage}
         />
       )}
-      <Footer />
+      <Footer
+        setShowFestLandPage={setShowFestLandPage}
+        setShowArtistdPage={setShowArtistPage}
+        setShowProgramPage={setShowProgramPage}
+        setShowFCardPage={setShowFCardPage}
+      />
     </>
   );
 }
