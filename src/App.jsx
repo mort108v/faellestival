@@ -22,7 +22,7 @@ function App() {
   const [isLogin, setIsLogin] = useState(false);
   const [scheduleData, setScheduleData] = useState([]);
   const [ticketsData, setTicketsData] = useState([]);
-  const [availableData, setAvailable] = useState({});
+  const [availableData, setAvailable] = useState([]);
   const ticketsJsonFile = "./content.json";
 
   useEffect(() => {
