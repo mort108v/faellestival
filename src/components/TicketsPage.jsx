@@ -1,30 +1,34 @@
-import React, {useState, useContext} from "react";
+import React, { useState, useContext } from "react";
 import { TicketsContext } from "../Contexts/TicketsContext.js";
 import { AvailableContext } from "../Contexts/AvailableContext.js";
 import MainSect from "./sections/MainSect";
 import CardGrid from "./sections/CardGrid";
 import OrderForm from "./sections/OrderForm";
 
-
-
-  function TicketsPage(props) {
-    const ticketsData = useContext(AvailableContext);
-    const ticketsContent = useContext(TicketsContext);
-    const [showForm, setShowForm] = useState(false);
+function TicketsPage(props) {
+  const ticketsData = useContext(AvailableContext);
+  const ticketsContent = useContext(TicketsContext);
+  const [showForm, setShowForm] = useState(false);
   const [soldOut, setSoldOut] = useState(false);
 
   //check if there is tickets available
   const initialValue = 0;
-  let sum = ticketsData.reduce((previousValue, currentValue) => previousValue + currentValue.available, initialValue)
-  sum == 0 ? setSoldOut(true) : "" ;
+  let sum = ticketsData.reduce(
+    (previousValue, currentValue) => previousValue + currentValue.available,
+    initialValue
+  );
+  sum == 0 ? setSoldOut(true) : "";
 
   return (
-  <section>
+    <section>
       <MainSect content="Tickets" bcReg="Main" {...props} />
-      <CardGrid ticketsContent={ticketsContent} setShowForm={setShowForm} soldOut={soldOut} />
-      {showForm && <OrderForm setShowForm={setShowForm} /> }
-  </section>
-
+      <CardGrid
+        ticketsContent={ticketsContent}
+        setShowForm={setShowForm}
+        soldOut={soldOut}
+      />
+      {showForm && <OrderForm setShowForm={setShowForm} />}
+    </section>
   );
 }
 

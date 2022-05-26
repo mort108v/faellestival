@@ -11,6 +11,7 @@ import { LoginContext } from "../Contexts/LoginContext.js";
 // import { ScheduleContext } from "../Contexts/ScheduleContext.js";
 
 function FestApp() {
+  
   const { setIsLogin } = useContext(LoginContext);
 
   const [showFestLandPage, setShowFestLandPage] = useState(true);
@@ -54,7 +55,12 @@ function FestApp() {
           setShowFCardPage={setShowFCardPage}
         />
       )}
-      <Footer />
+      <Footer
+        setShowFestLandPage={setShowFestLandPage}
+        setShowArtistdPage={setShowArtistPage}
+        setShowProgramPage={setShowProgramPage}
+        setShowFCardPage={setShowFCardPage}
+      />
     </>
   );
 }
