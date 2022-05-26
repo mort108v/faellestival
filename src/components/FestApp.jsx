@@ -14,21 +14,24 @@ function FestApp() {
   const [showArtistPage, setShowArtistPage] = useState(false);
   const [showProgramPage, setShowProgramPage] = useState(false);
   const [showFCardPage, setShowFCardPage] = useState(false);
-  const [pickedId, setPickedId] = useState();
+  const [pickedId, setPickedId] = useState([]);
 
   return (
     <>
       <NavBar
         setShowFestLandPage={setShowFestLandPage}
-        setShoArtistdPage={setShowArtistPage}
+        setShowArtistPage={setShowArtistPage}
         setShowProgramPage={setShowProgramPage}
         isLogin={setIsLogin}
       />
 
+
+
+
       {showFestLandPage && (
         <FestLandPage
           setShowFestLandPage={setShowFestLandPage}
-          setShowArtistdPage={setShowArtistPage}
+          setShowArtistPage={setShowArtistPage}
           setShowProgramPage={setShowProgramPage}
           setShowFCardPage={setShowFCardPage}
           pickedId={pickedId}
@@ -38,9 +41,10 @@ function FestApp() {
       {showArtistPage && (
         <ArtistPage
           setShowFestLandPage={setShowFestLandPage}
-          setShowArtistdPage={setShowArtistPage}
+          setShowArtistPage={setShowArtistPage}
           setShowProgramPage={setShowProgramPage}
           pickedId={pickedId}
+          setPickedId={setPickedId}
         />
       )}
       {showProgramPage && (

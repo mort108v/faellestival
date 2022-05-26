@@ -11,6 +11,7 @@ function FestLandPage(props) {
     props.setShowFestLandPage(false);
     props.setShowFCardPage(true);
   }
+
   return (
     <main>
       <Header className="header" />

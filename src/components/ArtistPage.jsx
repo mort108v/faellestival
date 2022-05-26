@@ -1,11 +1,21 @@
-import React from "react";
+import React, {useContext} from "react";
+import { BandsContext } from "../Contexts/BandsContext";
 
-function ArtistPage() {
+
+function ArtistPage(props) {
+  const bands = useContext(BandsContext)
+  console.log("artist", props.pickedId);
+
   return (
     <>
-      <ArtistHeader />
-      <ArtistBio />
-      <ArtistSection />
+
+ARTIST PAGE
+
+{props.pickedId.name}
+
+      {/* <ArtistHeader {...props} />
+      <ArtistBio {...props} />
+      <ArtistSection {...props} />  */}
     </>
   );
 }

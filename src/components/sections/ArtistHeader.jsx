@@ -5,7 +5,7 @@ function ArtistHeader() {
     return (
         <section className="artistHeader">
             <img src="" alt=""/>
-            <MainTitle className="mainTitle" content={} />
+            <MainTitle className="mainTitle" content="idontknow" />
             <ProgramCard />
         </section>
     )
