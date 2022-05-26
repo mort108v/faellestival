@@ -10,6 +10,7 @@ import TicketsPage from "./TicketsPage";
 import Footer from "./Footer";
 import FaqPage from "./FaqPage.jsx";
 
+
 function RegApp() {
   const { setIsLogin } = useContext(LoginContext);
   // const scheduleData = useContext(ScheduleContext);
@@ -33,6 +34,7 @@ function RegApp() {
         setShowLandPage={setShowLandPage}
         isLogin={setIsLogin}
       />
+             
       {showLandPage && (
         <LandingPage
           setShowTicketsPage={setShowTicketsPage}

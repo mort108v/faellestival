@@ -7,6 +7,9 @@ import { AvailableContext } from "./Contexts/AvailableContext.js";
 import FestApp from "./components/FestApp";
 import RegApp from "./components/RegApp";
 
+
+
+
 export const envData = {
   availableSpots: import.meta.env.VITE_FAELLESTIVAL_AVAILABLE_SPOTS,
   bands: import.meta.env.VITE_FAELLESTIVAL_BANDS,
