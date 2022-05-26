@@ -12,12 +12,10 @@ function ArtistCard(props) {
   //   root.style.setProperty('--img', imgPath);
 
   return (
-    <>
       <button className={props.className} onClick={props.action}>
-      {/* <img src={imgPath} alt={props.content} /> */}
+      <img className="artistImg" src={imgPath} alt={props.content} />
         <h2> {props.content}</h2>
       </button>
-    </>
   );
 }
 

@@ -17,6 +17,7 @@ function FestApp() {
   const [showArtistPage, setShowArtistPage] = useState(false);
   const [showProgramPage, setShowProgramPage] = useState(false);
   const [showFCardPage, setShowFCardPage] = useState(false);
+  const [pickedId, setPickedId] = useState();
 
   return (
     <>
@@ -33,6 +34,8 @@ function FestApp() {
           setShowArtistdPage={setShowArtistPage}
           setShowProgramPage={setShowProgramPage}
           setShowFCardPage={setShowFCardPage}
+          pickedId={pickedId}
+          setPickedId={setPickedId}
         />
       )}
       {showArtistPage && (
@@ -40,6 +43,7 @@ function FestApp() {
           setShowFestLandPage={setShowFestLandPage}
           setShowArtistdPage={setShowArtistPage}
           setShowProgramPage={setShowProgramPage}
+          pickedId={pickedId}
         />
       )}
       {showProgramPage && (

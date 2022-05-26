@@ -8,29 +8,31 @@ function Carrousel(props) {
   const [pic2, setPick2] = useState(1);
   const [pic3, setPick3] = useState(2);
   const [pic4, setPick4] = useState(3);
-  const [pickedId, setPickedId] = useState();
+
   const artists = useContext(BandsContext);
 
   function showNext() {
     console.log("showNext");
-    setPick1((old) => old + 4);
-    setPick2((old) => old + 4);
-    setPick3((old) => old + 4);
-    setPick4((old) => old + 4);
+    props.setPick1((old) => old + 4);
+    props.setPick2((old) => old + 4);
+    props.setPick3((old) => old + 4);
+    props.setPick4((old) => old + 4);
   }
 
   function showPrev() {
     console.log("showPrev");
-    setPick1((old) => old - 4);
-    setPick2((old) => old - 4);
-    setPick3((old) => old - 4);
-    setPick4((old) => old - 4);
+    props.setPick1((old) => old - 4);
+    props.setPick2((old) => old - 4);
+    props.setPick3((old) => old - 4);
+    props.setPick4((old) => old - 4);
   }
+
 
   return (
     <div className="carrousel">
       <ScrollElm className="prev" action={showPrev} />
       <article className="artistGrid">
+
         <ArtistCard
           key={pic1}
           id={artists[pic1].name}
@@ -38,8 +40,8 @@ function Carrousel(props) {
           className="artistCard"
           img={artists[pic1].logo}
           action={() => {
-            setPickedId(artists[pic1].name);
-            console.log("gotoArtist", pickedId);
+            props.setPickedId(artists[pic1].name);
+            console.log("gotoArtist", props.pickedId);
           }}
         />
 
@@ -50,8 +52,8 @@ function Carrousel(props) {
           className="artistCard"
           img={artists[pic2].logo}
           action={() => {
-            setPickedId(artists[pic2].name);
-            console.log("gotoArtist", pickedId);
+            props.setPickedId(artists[pic2].name);
+            console.log("gotoArtist", props.pickedId);
           }}
         />
 
@@ -62,8 +64,8 @@ function Carrousel(props) {
           className="artistCard"
           img={artists[pic3].logo}
           action={() => {
-            setPickedId(artists[pic3].name);
-            console.log("gotoArtist", pickedId);
+            props.setPickedId(artists[pic3].name);
+            console.log("gotoArtist", props.pickedId);
           }}
         />
 
@@ -74,8 +76,8 @@ function Carrousel(props) {
           className="artistCard"
           img={artists[pic4].logo}
           action={() => {
-            setPickedId(artists[pic4].name);
-            console.log("gotoArtist", pickedId);
+            props.setPickedId(artists[pic4].name);
+            console.log("gotoArtist", props.pickedId);
           }}
         />
       </article>

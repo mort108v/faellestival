@@ -19,7 +19,6 @@ function BannerSection() {
 
   return (
     <section>
-
       <Banner className="banner1">{data[0]}</Banner>
       <Banner className="banner1">{data[1]}</Banner>
       <Banner className="banner2">{data[2]}</Banner>
