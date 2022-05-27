@@ -18,9 +18,15 @@ import OrderForm from "./sections/OrderForm";
   let sum = ticketsData.reduce((previousValue, currentValue) => previousValue + currentValue.available, initialValue)
   sum == 0 ? setSoldOut(true) : "" ;
 
+  function goToMain() {
+    props.setShowTicketsPage(false);
+    props.setShowLandPage(true);
+
+  }
+
   return (
   <section>
-      <MainSect content="Tickets" bcReg="Main" {...props} />
+      <MainSect content="Tickets" bcReg="Main" action={goToMain} {...props} />
       <CardGrid ticketsContent={ticketsContent} setShowForm={setShowForm} soldOut={soldOut} />
       {showForm && <OrderForm setShowForm={setShowForm} /> }
   </section>
