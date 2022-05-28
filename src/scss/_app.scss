@@ -29,11 +29,10 @@
 // $orange: #dc6940;
 
 @import "./config.modules";
-@import "./buttons/buttons.scss";
+@import "./UI/buttons.scss";
 @import "./tickets/tickets.scss";
-@import "./artistcard/artistcard.scss";
+@import "./artist/artistcard.scss";
 @import "./grids/artistgrid.scss";
-@import "./grids/cardGrid.scss";
 @import "./header/header.scss";
 
 
