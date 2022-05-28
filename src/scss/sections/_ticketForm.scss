@@ -1,67 +1,62 @@
 .formBase {
-    display: flex;
-    background: rgb(255, 0, 228);
+    // background: $orangeGradient;
     // background: radial-gradient( circle, rgba(255, 0, 228, 1) 0%, rgba(212, 51, 16, 1) 84%, rgba(255, 0, 95, 1) 100%);
-    background: transparent;
-    width: 50vw;
-    height: 50vh;
-    justify-content: center;
-    align-items: center;
-    display: grid;
-    place-items: center;
+    // background-color: transparent;
+    // width: 100vw;
+    // height: 100vh;
+    // justify-content: center;
+    // align-items: center;
+    // display: grid;
+    // place-items: center;
 }
 
-.form {
-    width: 100%;
-    height: 100%;
+.ticket-form {
+    position: relative;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    background: rgba(255, 166, 0, 0.069);
 }
 
 .form-container {
-    width: 400px;
-    height: 400px;
+    width: 30vw;
+    height: 40vh;
     background-color: $dark-poster;
-    border-radius: 8px;
+    border-radius: 10px;
     box-shadow: $card-shadow;
     ;
     // box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.4);
     display: flex;
     flex-direction: column;
     border: $card-border;
-}
-
-.form-container .header {
-    flex: 20%;
-    display: grid;
-    place-items: center;
-}
-
-.form-container .body {
-    flex: 60%;
-}
-
-.form-container .footer {
-    flex: 20%;
-    display: flex;
-    justify-content: center;
-}
-
-.form-container .footer button {
-    border-radius: 7px;
-    width: 100px;
-    height: 40px;
-    background-color: rgb(255, 0, 140);
-    font-weight: bold;
-    color: white;
-    border: 0 none;
-    border-radius: 1px;
-    cursor: pointer;
-    padding: 10px 5px;
-    margin: 10px 5px;
-    margin: 5px;
+    & .header {
+        flex: 20%;
+        display: grid;
+        place-items: center;
+    }
+    & .body {
+        flex: 60%;
+    }
+    & .footer {
+        flex: 20%;
+        display: flex;
+        justify-content: center;
+        & button {
+            border-radius: 7px;
+            width: 100px;
+            height: 40px;
+            background-color: $primaryColor;
+            font-weight: bold;
+            color: rgb(255, 217, 0);
+            border: 0 none;
+            border-radius: 5px;
+            cursor: pointer;
+            padding: 10px 5px;
+            margin: 10px 5px;
+            margin: 5px;
+        }
+    }
 }
 
 .sign-up-container {
@@ -71,14 +66,13 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-}
-
-.sign-up-container input {
-    margin: 5px;
-    width: 200px;
-    height: 40px;
-    padding-left: 5px;
-    font-size: 20px;
+    & input {
+        margin: 5px;
+        width: 200px;
+        height: 40px;
+        padding-left: 5px;
+        font-size: 20px;
+    }
 }
 
 .personal-info-container {
@@ -88,14 +82,13 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-}
-
-.personal-info-container input {
-    margin: 5px;
-    width: 200px;
-    height: 40px;
-    padding-left: 5px;
-    font-size: 20px;
+    & input {
+        margin: 5px;
+        width: 200px;
+        height: 40px;
+        padding-left: 5px;
+        font-size: 20px;
+    }
 }
 
 
@@ -104,14 +97,13 @@
 .progressbar {
     width: 400px;
     height: 10px;
-    background-color: white;
+    background-color: $secondaryColor;
     margin-bottom: 50px;
-}
-
-.progressbar div {
-    width: 33.3%;
-    height: 100%;
-    background-color: rgb(98, 0, 255);
+    & div {
+        width: 20%;
+        height: 100%;
+        background-color: $orange;
+    }
 }
 
 .other-info-container {
@@ -121,21 +113,26 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-}
-
-.other-info-container input {
-    margin: 5px;
-    width: 200px;
-    height: 40px;
-    padding-left: 5px;
-    font-size: 20px;
+    & input {
+        margin: 5px;
+        width: 200px;
+        height: 40px;
+        padding-left: 5px;
+        font-size: 20px;
+    }
 }
 
 input {
-    border: 2px solid rgb(98, 0, 255);
+    padding: 10px;
     border-radius: 5px;
+    &:focus {
+        outline: none !important;
+        border: 2px solid orange;
+    }
 }
 
-input:focus {
-    border: 3px solid rgb(98, 0, 255);
+textarea {
+    &:focus {
+        outline: none !important;
+    }
 }

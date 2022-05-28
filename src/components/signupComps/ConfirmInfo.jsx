@@ -1,9 +1,10 @@
 import React from "react";
 
-function SignUpInfo({ formData, setFormData }) {
+function ConfirmInfo({ formData, setFormData }) {
   return (
-    <div className="sign-up-container">
+    <div className="sign-up-container draw">
       <input
+        className=" "
         type="text"
         placeholder="Email..."
         value={formData.email}
@@ -12,6 +13,7 @@ function SignUpInfo({ formData, setFormData }) {
         }
       />
       <input
+        className=" "
         type="text"
         placeholder="Password..."
         value={formData.password}
@@ -20,6 +22,7 @@ function SignUpInfo({ formData, setFormData }) {
         }
       />
       <input
+        className=" "
         type="text"
         placeholder="Confirm Password..."
         value={formData.confirmPassword}
@@ -31,4 +34,4 @@ function SignUpInfo({ formData, setFormData }) {
   );
 }
 
-export default SignUpInfo;
+export default ConfirmInfo;

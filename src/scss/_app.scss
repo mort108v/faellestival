@@ -31,6 +31,7 @@
 @import "config";
 @import "./sections/lineup";
 @import "./sections/ticketForm";
+@import "./sections/drawborder";
 body {
     margin: 0;
     box-sizing: border-box;
@@ -65,11 +66,3 @@ button {
     background-size: cover;
     height: 22vw;
 }
-
-// .lineupTxt {
-//   font-family: $body-font;
-//   color: white;
-//   background: $orange-gradient;
-//   -webkit-background-clip: text;
-//   -webkit-text-fill-color: transparent;
-// }

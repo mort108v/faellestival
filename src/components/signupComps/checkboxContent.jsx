@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import Checkbox from "./Checkbox";
 
-// const OPTIONS = ["One Day", "Weekend", "Partout"];
 const OPTIONS = [
   "Standard",
   "VIP",

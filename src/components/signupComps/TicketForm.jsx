@@ -1,73 +1,106 @@
 import React, { useState } from "react";
-import SignUpInfo from "./SignUpInfo";
+import ConfirmInfo from "./ConfirmInfo";
 import TicketContent from "./TicketContent";
 import PersonalInfo from "./PersonalInfo";
-import OtherInfo from "./OtherInfo";
+import ExtrasInfo from "./ExtrasInfo";
+import CampInfo from "./CampInfo";
 
 function TicketForm() {
   const [page, setPage] = useState(0);
   const [formData, setFormData] = useState({
-    email: "",
-    password: "",
-    confirmPassword: "",
+    userEmail: "",
+    userPassword: "",
+    confirmPassword: false,
     firstName: "",
     lastName: "",
     username: "",
-    other: "",
+    checkoutTotal: "",
+    authKey: "",
+    ticketType: "",
+    ticketDuration: "",
+    agreeTerms: "",
+    agreeSocial: "",
+    ticketAmount: 0,
+    ticketsUnderage: 0,
+    cardFee: 0,
+    campsite: "",
+    tentSetup: 0,
+    tentType: "",
+    merchPack: 0,
+    faellesCard: 0,
   });
-  const [formTicketsData, setFormTicketsData] = useState({
-    standard: false,
-    vip: false,
-    oneDay: false,
-    weekend: false,
-    partout: false,
-    agreeTerms: false,
-    agreeSocial: false,
-    amount: 0,
-  });
-  const options = [
-    "standard",
-    "vip",
-    "oneDay",
-    "weekend",
-    "partout",
-    "agreeTerms",
-    "agreeSocial",
-  ];
-  // const divFill = [(className = "")];
 
-  const FormTitles = ["Sign Up", "Select Tickets", "Personal Info", "Other"];
+  const FormTitles = [
+    "Select Tickets",
+    "Personal Info",
+    "Choose Campsite",
+    "Choose Extras",
+    "Confirm Your E-mail",
+    "Checkout Cart",
+  ];
+  const checkboxLabels = [
+    "Standard Ticket",
+    "VIP Ticket",
+    "Merch Pack",
+    "Tent Setup",
+    "Agree to Terms",
+    "Agree to Membership",
+  ];
 
   const PageDisplay = () => {
     if (page === 0) {
-      return <SignUpInfo formData={formData} setFormData={setFormData} />;
-    } else if (page === 1) {
       return (
         <TicketContent
-          formTicketsData={formTicketsData}
-          SetFormTicketsData={setFormTicketsData}
-          options={options}
+          formData={formData}
+          setFormData={setFormData}
+          checkboxLabels={checkboxLabels}
         />
       );
-    } else if (page === 2) {
+    } else if (page === 1) {
       return <PersonalInfo formData={formData} setFormData={setFormData} />;
-    } else {
-      return <OtherInfo formData={formData} setFormData={setFormData} />;
+    } else if (page === 2) {
+      return <CampInfo formData={formData} setFormData={setFormData} />;
+    } else if (page === 3) {
+      return <ExtrasInfo formData={formData} setFormData={setFormData} />;
+    } else if (page === 4) {
+      return (
+        <ConfirmInfo
+          formData={formData}
+          setFormData={setFormData}
+          checkboxLabels={checkboxLabels}
+        />
+      );
+    } else if (page === 5) {
+      return <TicketCheckout formData={formData} setFormData={setFormData} />;
     }
   };
 
   return (
-    <div className="form">
-      <div className="progressbar">
+    <div className="ticket-form draw">
+      <div className="progressbar transition-ease">
         <div
-          style={{ width: page === 0 ? "33.3%" : page == 1 ? "66.6%" : "100%" }}
+          className="transition-ease"
+          style={{
+            width:
+              page === 0
+                ? "16.6%"
+                : page == 1
+                ? "33.3%"
+                : page == 2
+                ? "50%"
+                : page == 3
+                ? "66.6%"
+                : page == 4
+                ? "83.3%"
+                : "100%",
+          }}
         ></div>
       </div>
-      <div className="form-container">
+      <div className="form-container ">
         <div className="header">
           <h1>{FormTitles[page]}</h1>
         </div>
-        <div className="body">{PageDisplay()}</div>
+        <div className="body ">{PageDisplay()}</div>
         <div className="footer">
           <button
             disabled={page == 0}
