@@ -10,10 +10,10 @@ function MainSect(props) {
     props.setShowLandPage(true);
   }
   // function goToFestApp() {
-  //     props.setShowArtistPage(false);
-  //     props.setShowProgram(false);
-  //     props.setShowFCardPage(false);
-  //     props.setShowFLandPage(true);
+  //   props.setShowArtistPage(false);
+  //   props.setShowProgram(false);
+  //   props.setShowFCardPage(false);
+  //   props.setShowFLandPage(true);
   // }
   return (
     <section className={props.className}>

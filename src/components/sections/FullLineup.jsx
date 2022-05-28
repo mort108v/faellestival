@@ -13,7 +13,7 @@ function FullLineup(props) {
 
     return (
         <>
-          <p >
+          <p className={props.className} >
               {artists.map((artist) => <Artist key={Math.random()} content={artist.name} />)}
           </p>
         </>

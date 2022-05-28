@@ -7,13 +7,12 @@ function LineupSection(props) {
     function goToLineup() {
         console.log("work");
         props.setShowLandPage(false);
-        props.setShowLineupPage(true)
+        props.setShowLineup(true)
     }
     return (
-<section>
-    <FullLineup styles={styles.lineupTxt} />
-    <p>And More...</p>
-    <Btn content="Full Line Up" action={goToLineup} />
+<section className={props.className} >
+    <FullLineup className="gradientTxt" />
+    <Btn className="secBtn" content="See Day by Day" action={goToLineup} />
 </section>
     )
 }

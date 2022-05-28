@@ -1,9 +1,9 @@
 import React from "react";
 import Header from "./Header.jsx";
 import Timer from "../UI/Timer.jsx";
-import HeroTxt from "./HeroTxt.jsx";
-import BtnGrid from "./BtnGrid.jsx";
-import ScrollElm from "./ScrollElm.jsx";
+import Title from "../UI/Title.jsx";
+import BtnGrid from "../UI/BtnGrid.jsx";
+import ScrollElm from "../UI/ScrollElm";
 
 
 function HeroSection(props) {
@@ -19,12 +19,12 @@ function showTickets() {
 
 }
   return (
-      <section>
+      <section className={props.className}>
           <Header className="header" />
-          <Timer />
-          <HeroTxt />
-          <BtnGrid {...props} btn1action={showLineup} btn1content="Line Up" btn2action={showTickets} btn2content="Tickets" />
-          <ScrollElm />
+          <Timer className="timer"/>
+          <Title className="heroTxt" content="26 of July • Stenstrup" />
+          <BtnGrid {...props} btn1action={showLineup} btn1content="Line Up" btn2action={showTickets} btn2content="Tickets" className="btnGrid" btn1className="secBtn" btn2className="secBtn" />
+          <ScrollElm className="scrollElm down" />
       </section>
   );
 }

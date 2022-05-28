@@ -7,10 +7,10 @@ import FaqSection from "./sections/FaqSection.jsx";
 function LandingPage(props) {
   return (
 <main>
-  <HeroSection {...props}/>
-  <LineupSection {...props} />
-  <BannerSection />
-  <FaqSection {...props}/>
+  <HeroSection className="heroSection" {...props}/>
+  <LineupSection className="lineupSection" {...props} />
+  <BannerSection className="bannerSection" />
+  <FaqSection className="faqSection" {...props}/>
 </main>
   );
 }
