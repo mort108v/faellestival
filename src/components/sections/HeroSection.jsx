@@ -23,7 +23,7 @@ function showTickets() {
           <Header className="header" />
           <Timer />
           <HeroTxt />
-          <BtnGrid {...props} btn1action={showLineup} btn1content="Line Up" btn2action={showTickets} btn2content="Tickets" />
+          <BtnGrid {...props} btn1action={showLineup} btn1content="Line Up" btn2action={showTickets} btn2content="Tickets" btn1className={"primBtn"} btn2className={"secBtn"} />
           <ScrollElm />
       </section>
   );

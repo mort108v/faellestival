@@ -9,9 +9,10 @@ import LineupPage from "./LineupPage";
 import TicketsPage from "./TicketsPage";
 import Footer from "./Footer";
 import FaqPage from "./FaqPage.jsx";
+import BurgerMenu from "./UI/BurgerMenu.jsx";
 
-function RegApp() {
-  const { setIsLogin } = useContext(LoginContext);
+function RegApp(props) {
+  const { isLogin, setIsLogin } = useContext(LoginContext);
   // const scheduleData = useContext(ScheduleContext);
   // const bandsData = useContext(BandsContext);
   // const ticketsData = useContext(TicketsContext);
@@ -19,6 +20,7 @@ function RegApp() {
   const [showLandPage, setShowLandPage] = useState(true);
   const [showTicketsPage, setShowTicketsPage] = useState(false);
   const [showFaqPage, setShowFaqPage] = useState(false);
+
 
   function handleClick() {
     console.log("login");
@@ -28,11 +30,26 @@ function RegApp() {
   return (
     <>
       <NavBar
+        {...props}
         setShowTicketsPage={setShowTicketsPage}
         setShowLineup={setShowLineup}
         setShowLandPage={setShowLandPage}
-        isLogin={setIsLogin}
+        className="regNavBar"
+        showLandPage={showLandPage}
+        showTicketsPage={showTicketsPage}
+        showLineup={showLineup}
       />
+        {/* const [showBurgerMenu, setShowBurgerMenu] = useState(false); */}
+{props.showBurgerMenu && <BurgerMenu
+        {...props}
+        setShowTicketsPage={setShowTicketsPage}
+        setShowLineup={setShowLineup}
+        setShowLandPage={setShowLandPage}
+        className="mobileBurgerMenu"
+        showLandPage={showLandPage}
+        showTicketsPage={showTicketsPage}
+        showLineup={showLineup}
+      />}
       {showLandPage && (
         <LandingPage
           setShowTicketsPage={setShowTicketsPage}
@@ -63,6 +80,7 @@ function RegApp() {
           setShowFaqPage={setShowFaqPage}
         />
       )}
+      
       <button onClick={handleClick}>Click LOGIN</button>
       <Footer
         setShowTicketsPage={setShowTicketsPage}

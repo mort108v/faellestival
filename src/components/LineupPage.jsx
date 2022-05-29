@@ -7,13 +7,19 @@ function LineupPage() {
   // const bands = useContext(BandsContext);
   // mondayData = {day: "Monday", date: "July 27th"};
 
+  let monBands = [
+    ...scheduleData.Jotunheim.mon,
+    ...scheduleData.Vanaheim.mon,
+    ...scheduleData.Midgard.mon,
+  ];
+  let tuesBands = [
+    ...scheduleData.Jotunheim.tue,
+    ...scheduleData.Vanaheim.tue,
+    ...scheduleData.Midgard.tue,
+  ];
+  // let mondaybandsV = scheduleData.Vanaheim.mon;
+  // let mondaybandsJ = scheduleData.Jotunheim.mon;
 
-  
-  let monBands = [...scheduleData.Jotunheim.mon, ...scheduleData.Vanaheim.mon, ...scheduleData.Midgard.mon];
-  let tuesBands = [...scheduleData.Jotunheim.tue, ...scheduleData.Vanaheim.tue, ...scheduleData.Midgard.tue];
-  // let mondaybandsV = scheduleData.Vanaheim.mon; 
-  // let mondaybandsJ = scheduleData.Jotunheim.mon; 
-  
   let dayProgram = [...monBands, ...tuesBands];
   // let WeekPlan = ;
 
@@ -21,16 +27,16 @@ function LineupPage() {
   //   if (timeslot.act.includes("break")) {} else {
   //     return <DayCard data={{timeslot.act}} />
   //   }})}
-  
-
 
   return (
     <div>
       {dayProgram.map((timeslot) => {
-      if (timeslot.act.includes("break")) {} else {
-        return <li>{timeslot.act}</li>
-      }})}
-            {/* {mondaybandsV.map((timeslot) => {
+        if (timeslot.act.includes("break")) {
+        } else {
+          return <li>{timeslot.act}</li>;
+        }
+      })}
+      {/* {mondaybandsV.map((timeslot) => {
       if (timeslot.act.includes("break")) {} else {
         return <li>{timeslot.act}</li>
       }})}
@@ -39,7 +45,7 @@ function LineupPage() {
         return <li>{timeslot.act}</li>
       }})} */}
 
-{/* <button onClick={manageClick}>consolelog</button>
+      {/* <button onClick={manageClick}>consolelog</button>
       LineupPage */}
     </div>
   );

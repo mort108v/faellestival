@@ -32,7 +32,7 @@ function FestLinks(props) {
     console.log("go to mainpage");
   }
   return (
-    <ul>
+    <ul className={props.globalClassName}>
       <Link className="link" content="Program" action={goToProgramPage} />
       <Link className="link" content="Artists" action={goToArtistsPage} />
       <Link className="link" content="Main Page" action={goTomainPage} />

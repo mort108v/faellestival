@@ -28,7 +28,8 @@
 // $yellow: #e89832;
 // $orange: #dc6940;
 
-@import "./config.modules";
+@import "./config";
+@import "./landPage";
 
 :root {
   --img: url("https://faellestival.dk/wp/wp-content/uploads/2018/09/cropped-MG_8034-1.jpg");
@@ -44,6 +45,48 @@ body {
 
 button {
   cursor: pointer;
+
+  &.primBtn {
+    cursor: pointer;
+    font-family: $body-font;
+    border-radius: 50px;
+    font-size: 1rem;
+    padding: 1rem 3rem;
+    color: white;
+    border: solid 3px transparent;
+    background-image: linear-gradient($dark-bg, $dark-bg), $orange-gradient;
+    background-origin: border-box;
+    background-clip: content-box, border-box;
+    box-shadow: 2px 1000px 1px $dark-poster inset;
+    transition: all 0.5s;
+
+    &:hover {
+      background-image: linear-gradient($dark-bg, $dark-bg), $hover-gradient;
+      color: $yellow;
+    }
+  }
+
+  &.secBtn {
+    text-transform: uppercase;
+      font-size: 1.3rem;
+      background: none;
+      border: none;
+      color: white;
+      &::after {
+        max-width: 100%;
+        height: 0.5rem;
+        display: block;
+        content: "";
+        background: $orange-gradient;
+        opacity: 1;
+        margin-bottom: -6px;
+        margin-top: 1px;
+      }
+       &:hover::after {
+        background: $hover-gradient;
+      }
+  }
+  
 }
 
 .header {
@@ -224,8 +267,7 @@ button {
     transition: opacity 0.7s;
   }
   &:hover {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.13), rgb(0, 0, 0)),
-      var(--img);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.13), rgb(0, 0, 0)), var(--img);
     box-shadow: $hov-card-sh;
   }
   &:hover h2 {
