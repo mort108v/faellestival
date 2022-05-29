@@ -11,4 +11,4 @@ function BtnGrid(props) {
     );
 }
 
-export default BtnGrid
+export default BtnGrid;

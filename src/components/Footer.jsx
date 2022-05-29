@@ -19,7 +19,13 @@ function Footer(props) {
         <BulletPoint content="Stenbankevej 13, 5771 Stenstrup" />
       </ul>
 
-      <ul>{isLogin ? <FestLinks {...props} /> : <RegLinks {...props} />}</ul>
+      <ul>
+        {isLogin ? (
+          <FestLinks {...props} globalClassName="footerLinks" />
+        ) : (
+          <RegLinks {...props} globalClassName="footerLinks" />
+        )}
+      </ul>
     </footer>
   );
 }

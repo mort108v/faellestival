@@ -20,6 +20,12 @@ function TicketsPage(props) {
   );
   sum == 0 ? setSoldOut(true) : "";
 
+  function goToMain() {
+    props.setShowTicketsPage(false);
+    props.setShowLandPage(true);
+
+  }
+
   return (
   <main>
       <MainSect className="mainSect" content="Tickets" bcReg="Main" {...props} />

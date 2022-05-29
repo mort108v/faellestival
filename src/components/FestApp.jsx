@@ -5,14 +5,12 @@ import FestLandPage from "./FestLandPage";
 import ArtistPage from "./ArtistPage";
 import ProgramPage from "./ProgramPage";
 import FaellesCardPage from "./FaellesCardPage";
+import BurgerMenu from "./UI/BurgerMenu";
+// import { BandsContext } from "../Contexts/BandsContext.js";
 import { LoginContext } from "../Contexts/LoginContext.js";
 
-// import { AvailableContext } from "../Contexts/AvailableContext.js";
-// import { ScheduleContext } from "../Contexts/ScheduleContext.js";
-
-
-function FestApp() {
-  const { setIsLogin } = useContext(LoginContext);
+function FestApp(props) {
+  const { isLogin, setIsLogin } = useContext(LoginContext);
 
   const [showFestLandPage, setShowFestLandPage] = useState(true);
   const [showArtistPage, setShowArtistPage] = useState(false);
@@ -23,11 +21,25 @@ function FestApp() {
   return (
     <>
       <NavBar
+        {...props}
         setShowFestLandPage={setShowFestLandPage}
         setShowArtistPage={setShowArtistPage}
         setShowProgramPage={setShowProgramPage}
-        isLogin={setIsLogin}
+        className="festNavBar"
+        showFestLandPage={showFestLandPage}
+        shoArtistdPage={showArtistPage}
+        showProgramPage={showProgramPage}
       />
+  {   props.showBurgerMenu && <BurgerMenu
+        {...props}
+        setShowFestLandPage={setShowFestLandPage}
+        setShoArtistdPage={setShowArtistPage}
+        setShowProgramPage={setShowProgramPage}
+        className="burgerMenu"
+        showFestLandPage={showFestLandPage}
+        shoArtistdPage={showArtistPage}
+        showProgramPage={showProgramPage}
+      />}
 
 
 
