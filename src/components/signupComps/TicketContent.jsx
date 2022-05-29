@@ -1,6 +1,7 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import TicketAmountHandler from "./TicketAmountHandler";
 import DayContainer from "./DayContainer";
+// import { FormContext } from "../../Contexts/FormContext";
 
 function TicketContent({ formData, setFormData, checkboxLabels }) {
   const [typeIsChecked, setTypeIsChecked] = useState([]);

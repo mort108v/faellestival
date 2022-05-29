@@ -7,13 +7,20 @@ import CampInfo from "./CampInfo";
 
 function TicketForm() {
   const [page, setPage] = useState(0);
+  const [extrasData, setExtrasData] = useState({
+    usersEmails: [],
+    usersFirstNames: [],
+    usersLastNames: [],
+    usersIds: [],
+    usersUnderage: [],
+  });
   const [formData, setFormData] = useState({
     userEmail: "",
     userPassword: "",
     confirmPassword: false,
     firstName: "",
     lastName: "",
-    username: "",
+    userName: "",
     checkoutTotal: "",
     authKey: "",
     ticketType: "",
@@ -22,13 +29,14 @@ function TicketForm() {
     agreeTerms: "",
     agreeSocial: "",
     ticketAmount: 0,
-    ticketsUnderage: 0,
+    isUnderage: false,
     cardFee: 0,
     campsite: "",
     tentSetup: 0,
     tentType: "",
     merchPack: 0,
     faellesCard: 0,
+    extraGuests: {},
   });
 
   const FormTitles = [
@@ -62,13 +70,20 @@ function TicketForm() {
     if (page === 0) {
       return (
         <TicketContent
+          checkboxLabels={checkboxLabels}
           formData={formData}
           setFormData={setFormData}
-          checkboxLabels={checkboxLabels}
         />
       );
     } else if (page === 1) {
-      return <PersonalInfo formData={formData} setFormData={setFormData} />;
+      return (
+        <PersonalInfo
+          formData={formData}
+          setFormData={setFormData}
+          extrasData={extrasData}
+          setExtrasData={setExtrasData}
+        />
+      );
     } else if (page === 2) {
       return <CampInfo formData={formData} setFormData={setFormData} />;
     } else if (page === 3) {

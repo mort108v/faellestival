@@ -1,18 +1,18 @@
 import React, { useState } from "react";
 
 function TicketAmountHandler({ formData, setFormData }) {
-  const [ticketAmount, setTicketAmount] = useState(0);
+  const [ticketCount, setTicketCount] = useState(0);
 
   function handleIncrement() {
-    if (ticketAmount < 6) {
-      setTicketAmount((prevCount) => prevCount + 1);
+    if (ticketCount < 6) {
+      setTicketCount((prevCount) => prevCount + 1);
     } else {
       alert("You reached max amount of tickets");
     }
   }
   function handleDecrement() {
-    if (ticketAmount > 0) {
-      setTicketAmount((prevCount) => prevCount - 1);
+    if (ticketCount > 0) {
+      setTicketCount((prevCount) => prevCount - 1);
     } else {
       return;
     }
@@ -22,7 +22,7 @@ function TicketAmountHandler({ formData, setFormData }) {
     <div className="incr-decr-container">
       <div className="incr-decr-header">
         <h3>Ticket Amount</h3>
-        <p>*How many people are attending?</p>
+        <span>*How many people are attending?</span>
       </div>
       <div className="incr-decr-body ticket-incr-decr">
         <button
@@ -34,12 +34,13 @@ function TicketAmountHandler({ formData, setFormData }) {
         </button>
         <input
           type="number"
-          name="counter"
+          name="text"
           className="numberInput"
+          value={ticketCount}
           onChange={(e) => {
+            console.log(formData.ticketAmount);
             setFormData({ ...formData, ticketAmount: e.target.value });
           }}
-          value={ticketAmount}
         />
         <button
           className="incrementBtn"
