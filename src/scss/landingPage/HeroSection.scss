@@ -1,21 +1,23 @@
-.heroSection{
+.heroSection {
   height: 100vh;
+  display: grid;
 }
 
-.Timer{
+.Timer {
   display: flex;
+  justify-content: center;
 }
 
-.heroText{
+.heroTxt {
+display: flex;
+justify-content: center;
+}
+
+.btnGrid {
   display: flex;
+  justify-content: center;
+  gap: 15vw;
 }
-
-.btnGrid{
- display: flex;
- justify-content: space-evenly;
-}
-
-
 
 .bannerSection {
   background-color: black;
@@ -25,7 +27,6 @@
   width: 100%;
   height: 50vh;
 }
-
 
 .faqSection {
   display: grid;
