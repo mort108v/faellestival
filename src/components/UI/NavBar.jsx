@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import { LoginContext } from "../../Contexts/LoginContext.js";
-import Btn from "./Btn.jsx";
+import Btn from "./Btn";
 import NavBrand from "./NavBrand.jsx";
 import BtnGrid from "../UI/BtnGrid.jsx";
 

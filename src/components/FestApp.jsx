@@ -8,6 +8,8 @@ import FaellesCardPage from "./FaellesCardPage";
 import BurgerMenu from "./UI/BurgerMenu";
 // import { BandsContext } from "../Contexts/BandsContext.js";
 import { LoginContext } from "../Contexts/LoginContext.js";
+import { AvailableContext } from "../Contexts/AvailableContext.js";
+import { ScheduleContext } from "../Contexts/ScheduleContext.js";
 
 function FestApp(props) {
   const { isLogin, setIsLogin } = useContext(LoginContext);

@@ -4,6 +4,7 @@ import { LoginContext } from "../Contexts/LoginContext.js";
 
 // import { TicketsContext } from "../Contexts/TicketsContext.js";
 // import { ScheduleContext } from "../Contexts/ScheduleContext.js";
+import { ScheduleContext } from "../Contexts/ScheduleContext.js";
 import NavBar from "./UI/NavBar.jsx";
 import LandingPage from "./LandingPage";
 import LineupPage from "./LineupPage";
@@ -16,12 +17,10 @@ function RegApp(props) {
   const { isLogin, setIsLogin } = useContext(LoginContext);
   // const scheduleData = useContext(ScheduleContext);
   // const bandsData = useContext(BandsContext);
-  // const ticketsData = useContext(TicketsContext);
   const [showLineup, setShowLineup] = useState(false);
   const [showLandPage, setShowLandPage] = useState(true);
   const [showTicketsPage, setShowTicketsPage] = useState(false);
   const [showFaqPage, setShowFaqPage] = useState(false);
-
 
   function handleClick() {
     console.log("login");
@@ -87,12 +86,7 @@ function RegApp(props) {
       )}
       
       <button onClick={handleClick}>Click LOGIN</button>
-      <Footer
-        setShowTicketsPage={setShowTicketsPage}
-        setShowLineup={setShowLineup}
-        setShowLandPage={setShowLandPage}
-        setShowFaqPage={setShowFaqPage}
-      />
+      <Footer setShowTicketsPage={setShowTicketsPage} setShowLineup={setShowLineup} setShowLandPage={setShowLandPage} setShowFaqPage={setShowFaqPage} />
     </>
   );
 }
