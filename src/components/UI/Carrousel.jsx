@@ -1,7 +1,7 @@
 import React, { useContext, useState } from "react";
 import { BandsContext } from "../../Contexts/BandsContext.js";
 import ArtistCard from "./ArtistCard.jsx";
-import ScrollElm from "../sections/ScrollElm";
+import ScrollElm from "./ScrollElm";
 
 function Carrousel(props) {
   const [pic1, setPick1] = useState(0);
@@ -13,26 +13,24 @@ function Carrousel(props) {
 
   function showNext() {
     console.log("showNext");
-    props.setPick1((old) => old + 4);
-    props.setPick2((old) => old + 4);
-    props.setPick3((old) => old + 4);
-    props.setPick4((old) => old + 4);
+    setPick1((old) => old + 4);
+    setPick2((old) => old + 4);
+    setPick3((old) => old + 4);
+    setPick4((old) => old + 4);
   }
 
   function showPrev() {
     console.log("showPrev");
-    props.setPick1((old) => old - 4);
-    props.setPick2((old) => old - 4);
-    props.setPick3((old) => old - 4);
-    props.setPick4((old) => old - 4);
+    setPick1((old) => old - 4);
+    setPick2((old) => old - 4);
+    setPick3((old) => old - 4);
+    setPick4((old) => old - 4);
   }
-
 
   return (
     <div className="carrousel">
-      <ScrollElm className="prev" action={showPrev} />
+      <ScrollElm className="scrollElm prev" action={showPrev} />
       <article className="artistGrid">
-
         <ArtistCard
           key={pic1}
           id={artists[pic1].name}
@@ -40,8 +38,10 @@ function Carrousel(props) {
           className="artistCard"
           img={artists[pic1].logo}
           action={() => {
-            props.setPickedId(artists[pic1].name);
+            props.setPickedId(artists[pic1]);
             console.log("gotoArtist", props.pickedId);
+            props.setShowFestLandPage(false);
+            props.setShowArtistPage(true);
           }}
         />
 
@@ -52,8 +52,10 @@ function Carrousel(props) {
           className="artistCard"
           img={artists[pic2].logo}
           action={() => {
-            props.setPickedId(artists[pic2].name);
+            props.setPickedId(artists[pic2]);
             console.log("gotoArtist", props.pickedId);
+            props.setShowFestLandPage(false);
+            props.setShowArtistPage(true);
           }}
         />
 
@@ -64,8 +66,10 @@ function Carrousel(props) {
           className="artistCard"
           img={artists[pic3].logo}
           action={() => {
-            props.setPickedId(artists[pic3].name);
+            props.setPickedId(artists[pic3]);
             console.log("gotoArtist", props.pickedId);
+            props.setShowFestLandPage(false);
+            props.setShowArtistPage(true);
           }}
         />
 
@@ -76,12 +80,14 @@ function Carrousel(props) {
           className="artistCard"
           img={artists[pic4].logo}
           action={() => {
-            props.setPickedId(artists[pic4].name);
+            props.setPickedId(artists[pic4]);
             console.log("gotoArtist", props.pickedId);
+            props.setShowFestLandPage(false);
+            props.setShowArtistPage(true);
           }}
         />
       </article>
-      <ScrollElm className="next" action={showNext} />
+      <ScrollElm className="scrollElm next" action={showNext} />
     </div>
   );
 }

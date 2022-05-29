@@ -5,10 +5,7 @@ import FestLandPage from "./FestLandPage";
 import ArtistPage from "./ArtistPage";
 import ProgramPage from "./ProgramPage";
 import FaellesCardPage from "./FaellesCardPage";
-// import { BandsContext } from "../Contexts/BandsContext.js";
 import { LoginContext } from "../Contexts/LoginContext.js";
-// import { TicketsContext } from "../Contexts/TicketsContext.js";
-// import { ScheduleContext } from "../Contexts/ScheduleContext.js";
 
 function FestApp() {
   const { setIsLogin } = useContext(LoginContext);
@@ -17,21 +14,24 @@ function FestApp() {
   const [showArtistPage, setShowArtistPage] = useState(false);
   const [showProgramPage, setShowProgramPage] = useState(false);
   const [showFCardPage, setShowFCardPage] = useState(false);
-  const [pickedId, setPickedId] = useState();
+  const [pickedId, setPickedId] = useState([]);
 
   return (
     <>
       <NavBar
         setShowFestLandPage={setShowFestLandPage}
-        setShoArtistdPage={setShowArtistPage}
+        setShowArtistPage={setShowArtistPage}
         setShowProgramPage={setShowProgramPage}
         isLogin={setIsLogin}
       />
 
+
+
+
       {showFestLandPage && (
         <FestLandPage
           setShowFestLandPage={setShowFestLandPage}
-          setShowArtistdPage={setShowArtistPage}
+          setShowArtistPage={setShowArtistPage}
           setShowProgramPage={setShowProgramPage}
           setShowFCardPage={setShowFCardPage}
           pickedId={pickedId}
@@ -41,9 +41,10 @@ function FestApp() {
       {showArtistPage && (
         <ArtistPage
           setShowFestLandPage={setShowFestLandPage}
-          setShowArtistdPage={setShowArtistPage}
+          setShowArtistPage={setShowArtistPage}
           setShowProgramPage={setShowProgramPage}
           pickedId={pickedId}
+          setPickedId={setPickedId}
         />
       )}
       {showProgramPage && (
