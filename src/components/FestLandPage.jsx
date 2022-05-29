@@ -6,6 +6,7 @@ import Section from "./sections/Section";
 import ArtistsSection from "./sections/ArtistsSection";
 
 function FestLandPage(props) {
+
   function goToFCardPage() {
     props.setShowFestLandPage(false);
     props.setShowFCardPage(true);

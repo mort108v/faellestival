@@ -192,6 +192,12 @@ button {
   padding-bottom: 5rem;
 }
 
+.carrousel {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .artistCard {
   background-image: var(--img);
   background-color: none;

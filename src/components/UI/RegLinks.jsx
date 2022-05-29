@@ -24,7 +24,7 @@ function RegLinks(props) {
     console.log("tickets");
   }
   return (
-    <ul>
+    <ul className={props.globalClassName}>
       <Link className="link" content="Tickets" action={goToTicketsPage} />
       <Link className="link" content="LineUp" action={goToLineupPage} />
       <Link className="link" content="Festival App" action={goTofestAppPage} />

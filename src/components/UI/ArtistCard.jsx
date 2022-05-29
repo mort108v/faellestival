@@ -1,33 +1,21 @@
 import React from "react";
 
 function ArtistCard(props) {
+  let imgPath;
+  let img = props.img;
+  img.includes("http")
+    ? (imgPath = props.img)
+    : (imgPath = "https://a3m-festival.herokuapp.com/logos/" + img);
+  console.log(imgPath);
 
-
-
-        
-        
-        
-//         let imgPath;
-//         let img = props.img;
-//         img.includes("http")
-//         ? (imgPath = 'url(' + props.img + ')')
-//         : (imgPath = 'url(https://a3m-festival.herokuapp.com/logos/' + img);
-//         console.log(imgPath);
-        
-//         let root = document.documentElement;
-//   root.style.setProperty('--img', imgPath);
-
-
+  //         let root = document.documentElement;
+  //   root.style.setProperty('--img', imgPath);
 
   return (
-    <button
-      key={props.key}
-      className={props.className}
-      onClick={props.action}
-    >
+      <button className={props.className} onClick={props.action}>
+      <img className="artistImg" src={imgPath} alt={props.content} />
         <h2> {props.content}</h2>
-    
-    </button>
+      </button>
   );
 }
 

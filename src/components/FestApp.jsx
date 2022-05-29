@@ -5,28 +5,43 @@ import FestLandPage from "./FestLandPage";
 import ArtistPage from "./ArtistPage";
 import ProgramPage from "./ProgramPage";
 import FaellesCardPage from "./FaellesCardPage";
+import BurgerMenu from "./UI/BurgerMenu";
 // import { BandsContext } from "../Contexts/BandsContext.js";
 import { LoginContext } from "../Contexts/LoginContext.js";
 // import { TicketsContext } from "../Contexts/TicketsContext.js";
 // import { ScheduleContext } from "../Contexts/ScheduleContext.js";
 
-function FestApp() {
-  
-  const { setIsLogin } = useContext(LoginContext);
+function FestApp(props) {
+  const { isLogin, setIsLogin } = useContext(LoginContext);
 
   const [showFestLandPage, setShowFestLandPage] = useState(true);
   const [showArtistPage, setShowArtistPage] = useState(false);
   const [showProgramPage, setShowProgramPage] = useState(false);
   const [showFCardPage, setShowFCardPage] = useState(false);
+  const [pickedId, setPickedId] = useState();
 
   return (
     <>
       <NavBar
+        {...props}
         setShowFestLandPage={setShowFestLandPage}
         setShoArtistdPage={setShowArtistPage}
         setShowProgramPage={setShowProgramPage}
-        isLogin={setIsLogin}
+        className="festNavBar"
+        showFestLandPage={showFestLandPage}
+        shoArtistdPage={showArtistPage}
+        showProgramPage={showProgramPage}
       />
+  {   props.showBurgerMenu && <BurgerMenu
+        {...props}
+        setShowFestLandPage={setShowFestLandPage}
+        setShoArtistdPage={setShowArtistPage}
+        setShowProgramPage={setShowProgramPage}
+        className="burgerMenu"
+        showFestLandPage={showFestLandPage}
+        shoArtistdPage={showArtistPage}
+        showProgramPage={showProgramPage}
+      />}
 
       {showFestLandPage && (
         <FestLandPage
@@ -34,6 +49,8 @@ function FestApp() {
           setShowArtistdPage={setShowArtistPage}
           setShowProgramPage={setShowProgramPage}
           setShowFCardPage={setShowFCardPage}
+          pickedId={pickedId}
+          setPickedId={setPickedId}
         />
       )}
       {showArtistPage && (
@@ -41,6 +58,7 @@ function FestApp() {
           setShowFestLandPage={setShowFestLandPage}
           setShowArtistdPage={setShowArtistPage}
           setShowProgramPage={setShowProgramPage}
+          pickedId={pickedId}
         />
       )}
       {showProgramPage && (
