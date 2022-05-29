@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import { LoginContext } from "../../Contexts/LoginContext.js";
 import Btn from "./Btn.jsx";
 import NavBrand from "./NavBrand.jsx";
-import BtnGrid from "../sections/BtnGrid.jsx";
+import BtnGrid from "../UI/BtnGrid.jsx";
 
 function NavBar(props) {
   const { isLogin, setIsLogin } = useContext(LoginContext);
@@ -35,17 +35,13 @@ function NavBar(props) {
       {props.showLandPage || props.showFestLandPage ? (
         []
       ) : (
-      
-          <NavBrand
-            {...props}
-            logoClassName="navLogo"
-            className="navTitle"
-            content="Faellestival"
-          />
-        
+        <NavBrand
+          {...props}
+          logoClassName="navLogo"
+          className="navTitle"
+          content="Faellestival"
+        />
       )}
-
-
 
       {props.showTicketsPage && (
         <BtnGrid
@@ -76,8 +72,8 @@ function NavBar(props) {
       {props.showLandPage && (
         <Btn action={goToFestApp} content="Fest App" className="primBtn" />
       )}
-            {props.showLandPage && (
- <Btn content="☰" action={openBurger} className="burgerBtn" />
+      {props.showLandPage && (
+        <Btn content="☰" action={openBurger} className="burgerBtn" />
       )}
       {isLogin && (
         <BtnGrid
