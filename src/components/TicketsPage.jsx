@@ -19,16 +19,19 @@ function TicketsPage(props) {
   );
   sum == 0 ? setSoldOut(true) : "";
 
+  function goToMain() {
+    props.setShowTicketsPage(false);
+    props.setShowLandPage(true);
+
+  }
+
   return (
-    <section>
-      <MainSect content="Tickets" bcReg="Main" {...props} />
-      <CardGrid
-        ticketsContent={ticketsContent}
-        setShowForm={setShowForm}
-        soldOut={soldOut}
-      />
-      {showForm && <OrderForm setShowForm={setShowForm} />}
-    </section>
+  <section>
+      <MainSect content="Tickets" bcReg="Main" action={goToMain} {...props} />
+      <CardGrid ticketsContent={ticketsContent} setShowForm={setShowForm} soldOut={soldOut} />
+      {showForm && <OrderForm setShowForm={setShowForm} /> }
+  </section>
+
   );
 }
 

@@ -21,6 +21,7 @@ function RegApp(props) {
   const [showTicketsPage, setShowTicketsPage] = useState(false);
   const [showFaqPage, setShowFaqPage] = useState(false);
 
+
   function handleClick() {
     console.log("login");
     setIsLogin(true);
@@ -79,6 +80,7 @@ function RegApp(props) {
           setShowFaqPage={setShowFaqPage}
         />
       )}
+      
       <button onClick={handleClick}>Click LOGIN</button>
       <Footer
         setShowTicketsPage={setShowTicketsPage}

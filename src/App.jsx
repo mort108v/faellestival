@@ -36,6 +36,8 @@ function App() {
       });
   }, []);
 
+
+
   useEffect(() => {
     fetch(envData.bands)
       .then((res) => res.json())
