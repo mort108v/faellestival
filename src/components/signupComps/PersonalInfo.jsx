@@ -27,6 +27,23 @@ function PersonalInfo({ formData, setFormData }) {
           setFormData({ ...formData, username: e.target.value });
         }}
       />
+      <input
+        type="email"
+        placeholder="Guest e-mail..."
+        value={formData.userEmail}
+        onChange={(e) => {
+          setFormData({ ...formData, userEmail: e.target.value });
+        }}
+      />
+      <input
+        type="number"
+        className="numberInput"
+        placeholder="Guest Age..."
+        value={formData.userAge}
+        onChange={(e) => {
+          setFormData({ ...formData, userAge: e.target.value });
+        }}
+      />
     </div>
   );
 }

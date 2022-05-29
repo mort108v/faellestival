@@ -19,22 +19,36 @@ function TicketAmountHandler({ formData, setFormData }) {
   }
 
   return (
-    <div className="increment-decrement">
-      <button className="decrementBtn" type="button" onClick={handleDecrement}>
-        <span> - </span>
-      </button>
-      <input
-        type="number"
-        name="counter"
-        className="numberIput"
-        onChange={(e) => {
-          setFormData({ ...formData, ticketAmount: e.target.value });
-        }}
-        value={ticketAmount}
-      />
-      <button className="incrementBtn" type="button" onClick={handleIncrement}>
-        <span> + </span>
-      </button>
+    <div className="incr-decr-container">
+      <div className="incr-decr-header">
+        <h3>Ticket Amount</h3>
+        <p>*How many people are attending?</p>
+      </div>
+      <div className="incr-decr-body ticket-incr-decr">
+        <button
+          className="decrementBtn"
+          type="button"
+          onClick={handleDecrement}
+        >
+          <span> - </span>
+        </button>
+        <input
+          type="number"
+          name="counter"
+          className="numberInput"
+          onChange={(e) => {
+            setFormData({ ...formData, ticketAmount: e.target.value });
+          }}
+          value={ticketAmount}
+        />
+        <button
+          className="incrementBtn"
+          type="button"
+          onClick={handleIncrement}
+        >
+          <span> + </span>
+        </button>
+      </div>
     </div>
   );
 }

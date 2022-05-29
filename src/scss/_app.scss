@@ -33,6 +33,10 @@
 @import "./sections/ticketForm";
 @import "./sections/drawborder";
 @import "./global/counter";
+.hide {
+    display: none;
+}
+
 body {
     margin: 0;
     box-sizing: border-box;
