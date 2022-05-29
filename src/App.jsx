@@ -6,7 +6,7 @@ import { ScheduleContext } from "./Contexts/ScheduleContext.js";
 import { AvailableContext } from "./Contexts/AvailableContext.js";
 import FestApp from "./components/FestApp";
 import RegApp from "./components/RegApp";
-// import styles from "./scss/_app.module.scss";
+
 
 export const envData = {
   availableSpots: import.meta.env.VITE_FAELLESTIVAL_AVAILABLE_SPOTS,
@@ -23,7 +23,7 @@ function App() {
   const [isLogin, setIsLogin] = useState(false);
   const [scheduleData, setScheduleData] = useState([]);
   const [ticketsData, setTicketsData] = useState([]);
-  const [availableData, setAvailable] = useState({});
+  const [availableData, setAvailable] = useState([]);
   const ticketsJsonFile = "./content.json";
 
   useEffect(() => {
