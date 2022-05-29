@@ -40,10 +40,10 @@ function RegApp() {
           setShowTicketsPage={setShowTicketsPage}
           setShowLineup={setShowLineup}
           setShowLandPage={setShowLandPage}
-{<<<<<<< who-is-playing-now
+// {<<<<<<< who-is-playing-now
           setShowFaqPage={setShowFaqPage}
-=======}
-            {>>>>>>> main}
+// =======}
+//             {>>>>>>> main}
         />
       )}
       {showLineup && (
@@ -60,7 +60,7 @@ function RegApp() {
           setShowLandPage={setShowLandPage}
         />
       )}
-      {<<<<<<< who-is-playing-now}
+      {/* {<<<<<<< who-is-playing-now} */}
       {showFaqPage && (
         <FaqPage
           setShowTicketsPage={setShowTicketsPage}
