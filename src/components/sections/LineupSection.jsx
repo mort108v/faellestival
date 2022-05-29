@@ -1,7 +1,8 @@
-import React from 'react';
+import React from "react";
 import Btn from "../UI/Btn.jsx";
 import FullLineup from "./FullLineup.jsx";
-import styles from "../../scss/_landPage.module.scss";
+// import styles from "../../scss/sections/_lineup.scss";
+// const styles = resolve('./')
 
 function LineupSection(props) {
     function goToLineup() {
@@ -15,6 +16,7 @@ function LineupSection(props) {
     <Btn className="secBtn" content="See Day by Day" action={goToLineup} />
 </section>
     )
+
 }
 
-export default LineupSection
+export default LineupSection;

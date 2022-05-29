@@ -1,6 +1,7 @@
 import React, { useContext, useState } from "react";
 // import { BandsContext } from "../Contexts/BandsContext.js";
 import { LoginContext } from "../Contexts/LoginContext.js";
+
 // import { TicketsContext } from "../Contexts/TicketsContext.js";
 // import { ScheduleContext } from "../Contexts/ScheduleContext.js";
 import NavBar from "./UI/NavBar.jsx";
@@ -9,6 +10,7 @@ import LineupPage from "./LineupPage";
 import TicketsPage from "./TicketsPage";
 import Footer from "./Footer";
 import FaqPage from "./FaqPage.jsx";
+
 
 function RegApp() {
   const { setIsLogin } = useContext(LoginContext);
@@ -38,7 +40,10 @@ function RegApp() {
           setShowTicketsPage={setShowTicketsPage}
           setShowLineup={setShowLineup}
           setShowLandPage={setShowLandPage}
+{<<<<<<< who-is-playing-now
           setShowFaqPage={setShowFaqPage}
+=======}
+            {>>>>>>> main}
         />
       )}
       {showLineup && (
@@ -55,6 +60,7 @@ function RegApp() {
           setShowLandPage={setShowLandPage}
         />
       )}
+      {<<<<<<< who-is-playing-now}
       {showFaqPage && (
         <FaqPage
           setShowTicketsPage={setShowTicketsPage}

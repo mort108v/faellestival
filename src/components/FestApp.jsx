@@ -7,6 +7,10 @@ import ProgramPage from "./ProgramPage";
 import FaellesCardPage from "./FaellesCardPage";
 import { LoginContext } from "../Contexts/LoginContext.js";
 
+import { AvailableContext } from "../Contexts/AvailableContext.js";
+import { ScheduleContext } from "../Contexts/ScheduleContext.js";
+
+
 function FestApp() {
   const { setIsLogin } = useContext(LoginContext);
 
