@@ -13,7 +13,8 @@ function ArtistCard(props) {
 
   return (
       <button className={props.className} onClick={props.action}>
-      <img className="artistImg" src={imgPath} alt={props.content} />
+        {imgPath.endsWith("svg") ? <img className="artistPng" src={imgPath} alt={props.content} /> : <img className="artistImg" src={imgPath} alt={props.content} />}
+      {/* <img className="artistImg" src={imgPath} alt={props.content} /> */}
         <h3> {props.content}</h3>
       </button>
   );
