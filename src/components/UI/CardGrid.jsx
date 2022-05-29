@@ -1,12 +1,13 @@
 import React from "react";
-import TicketCard from "../UI/TicketCard";
+import TicketCard from "./TicketCard";
 
 function CardGrid(props) {
   return (
-    <div>
+    <div className={props.className} >
       {props.ticketsContent &&
         props.ticketsContent.map((ticket, index) => (
           <TicketCard
+          cardClass="ticketCard"
             contentClass="ticketContent"
             head={ticket.ticketOpt}
             content={ticket.specs}

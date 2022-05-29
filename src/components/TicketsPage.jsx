@@ -2,7 +2,7 @@ import React, { useState, useContext } from "react";
 import { TicketsContext } from "../Contexts/TicketsContext.js";
 import { AvailableContext } from "../Contexts/AvailableContext.js";
 import MainSect from "./sections/MainSect";
-import CardGrid from "./sections/CardGrid";
+import CardGrid from "./UI/CardGrid";
 import OrderForm from "./sections/OrderForm";
 //  import ticketContent from "./content.json?raw";
 
@@ -20,16 +20,18 @@ function TicketsPage(props) {
   );
   sum == 0 ? setSoldOut(true) : "";
 
+  function goToMain() {
+    props.setShowTicketsPage(false);
+    props.setShowLandPage(true);
+
+  }
+
   return (
-    <section>
-      <MainSect content="Tickets" bcReg="Main" {...props} />
-      <CardGrid
-        ticketsContent={ticketsContent}
-        setShowForm={setShowForm}
-        soldOut={soldOut}
-      />
-      {showForm && <OrderForm setShowForm={setShowForm} />}
-    </section>
+  <main>
+      <MainSect className="mainSect" content="Tickets" bcReg="Main" {...props} />
+      <CardGrid className="cardGrid" ticketsContent={ticketsContent} setShowForm={setShowForm} soldOut={soldOut} />
+      {showForm && <OrderForm setShowForm={setShowForm} /> }
+  </main>
   );
 }
 

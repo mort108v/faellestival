@@ -1,7 +1,9 @@
 import React from "react";
 
 function ProgramPage() {
-  return <div>ProgramPage</div>;
+
+  
+  return <div></div>;
 }
 
 export default ProgramPage;

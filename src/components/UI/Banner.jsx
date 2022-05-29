@@ -1,36 +1,14 @@
-import React, {useContext} from 'react';
-import { BandsContext } from "../../Contexts/BandsContext.js";
-import { ScheduleContext } from "../../Contexts/ScheduleContext.js";
+import React from 'react';
 
 function Banner(props) {
     return (
-        <p>
+    <div>
+        <img className="bannerImage" src={null} alt={null} />
+        <p className={props.className}>
             {props.children}
         </p>
+    </div>
     )
 }
-
-// function Banner(props) {
-//     const bandsData = useContext(BandsContext);
-//     const stagesData = useContext(ScheduleContext);
-    
-//     // const myArray = ['a', 'b', 'a', 'b', 'c', 'e', 'e', 'c', 'd', 'd', 'd', 'd']
-//     // let myArrayWithNoDuplicates = myArray.reduce(function (previousValue, currentValue) {
-//     //   if (previousValue.indexOf(currentValue) === -1) {
-//     //     previousValue.push(currentValue)
-//     //   }
-//     //   return previousValue
-//     // }, [])
-    
-//     // console.log(myArrayWithNoDuplicates)
-//   return (
-//     <>
-// {props.content && <p>{props.content}</p>}
-// {props.type == "bandsQty" && <p>{bandsData.length} Bands </p> }
-// {props.type == "genre" && <p>{bandsData.length} genres </p> }
-
-//     </>
-//   )
-// }
 
 export default Banner

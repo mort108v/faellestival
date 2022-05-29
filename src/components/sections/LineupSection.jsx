@@ -5,18 +5,18 @@ import FullLineup from "./FullLineup.jsx";
 // const styles = resolve('./')
 
 function LineupSection(props) {
-  function goToLineup() {
-    console.log("work");
-    props.setShowLandPage(false);
-    props.setShowLineupPage(true);
-  }
-  return (
-    <section className={"lineupTxt"}>
-      <FullLineup />
-      <p>And More...</p>
-      <Btn content="Full Line Up" action={goToLineup} />
-    </section>
-  );
+    function goToLineup() {
+        console.log("work");
+        props.setShowLandPage(false);
+        props.setShowLineup(true)
+    }
+    return (
+<section className={props.className} >
+    <FullLineup className="gradientTxt" />
+    <Btn className="secBtn" content="See Day by Day" action={goToLineup} />
+</section>
+    )
+
 }
 
 export default LineupSection;

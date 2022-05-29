@@ -6,7 +6,7 @@ import { ScheduleContext } from "./Contexts/ScheduleContext.js";
 import { AvailableContext } from "./Contexts/AvailableContext.js";
 import FestApp from "./components/FestApp";
 import RegApp from "./components/RegApp";
-// import styles from "./scss/_app.module.scss";
+
 
 export const envData = {
   availableSpots: import.meta.env.VITE_FAELLESTIVAL_AVAILABLE_SPOTS,
@@ -23,7 +23,9 @@ function App() {
   const [isLogin, setIsLogin] = useState(false);
   const [scheduleData, setScheduleData] = useState([]);
   const [ticketsData, setTicketsData] = useState([]);
-  const [availableData, setAvailable] = useState({});
+  const [availableData, setAvailable] = useState([]);
+  const [showBurgerMenu, setShowBurgerMenu] = useState(false);
+
   const ticketsJsonFile = "./content.json";
 
   useEffect(() => {
@@ -34,6 +36,8 @@ function App() {
         console.log(data);
       });
   }, []);
+
+
 
   useEffect(() => {
     fetch(envData.bands)
@@ -69,7 +73,17 @@ function App() {
           <LoginContext.Provider value={{ isLogin, setIsLogin }}>
             <TicketsContext.Provider value={ticketsData}>
               <AvailableContext.Provider value={availableData}>
-                {isLogin ? <FestApp /> : <RegApp />}
+                {isLogin ? (
+                  <FestApp
+                    setShowBurgerMenu={setShowBurgerMenu}
+                    showBurgerMenu={showBurgerMenu}
+                  />
+                ) : (
+                  <RegApp
+                    setShowBurgerMenu={setShowBurgerMenu}
+                    showBurgerMenu={showBurgerMenu}
+                  />
+                )}
               </AvailableContext.Provider>
             </TicketsContext.Provider>
           </LoginContext.Provider>

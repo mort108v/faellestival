@@ -9,19 +9,18 @@ function TicketCard(props) {
     console.log("OPEN FORM");
   }
   return (
-    <div>
-      <CardTitle head={props.head} />
-      <section>
+    <div className={props.cardClass}>
+      <CardTitle className="ticketTitle" head={props.head} />
+      <section className={props.contentClass}>
         <CardContent
-          className={props.contentClass}
           content={props.content}
           price={props.price}
         />
         {props.soldOut ? (
-          <Btn className="inactive" content="Sold Out" />
+          <Btn className="inactive out" content="Sold Out" />
         ) : (
           <Btn
-            className="primBtn"
+            className="primBtn out"
             action={openForm}
             content="Get Your Ticket"
           />

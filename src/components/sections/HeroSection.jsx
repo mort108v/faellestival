@@ -1,20 +1,37 @@
 import React from "react";
-import Header from "./Header.jsx";
-import Timer from "../Timer.jsx";
-import HeroTxt from "./HeroTxt.jsx";
-import BtnGrid from "./BtnGrid.jsx";
-import ScrollElm from "./ScrollElm.jsx";
-
-import TimeTick from "./TimeTick.jsx";
+import Header from "./Header";
+import TimeTick from "./TimeTick";
+import Title from "../UI/Title";
+import BtnGrid from "../UI/BtnGrid";
+import ScrollElm from "./ScrollElm";
 
 function HeroSection(props) {
+  function showLineup() {
+    console.log("showlineup");
+    props.setShowLineup(true);
+    props.setShowLandPage(false);
+  }
+  function showTickets() {
+    props.setShowTicketsPage(true);
+    props.setShowLandPage(false);
+    console.log("showtickets");
+  }
   return (
-    <section>
-      <Header className="header" setIsLogin={props.setIsLogin} />
+    <section className={props.className}>
+      <Header className="header" />
       <TimeTick />
-      <HeroTxt />
-      <BtnGrid {...props} />
-      <ScrollElm />
+      <Title className="heroTxt" content="26 of July • Stenstrup" />
+      <BtnGrid
+        {...props}
+        btn1action={showLineup}
+        btn1content="Line Up"
+        btn2action={showTickets}
+        btn2content="Tickets"
+        className="btnGrid"
+        btn1className="secBtn"
+        btn2className="secBtn"
+      />
+      <ScrollElm className="scrollElm down" />
     </section>
   );
 }
