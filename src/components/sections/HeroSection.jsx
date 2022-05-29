@@ -3,7 +3,7 @@ import Header from "./Header.jsx";
 import Timer from "../UI/Timer.jsx";
 import Title from "../UI/Title.jsx";
 import BtnGrid from "../UI/BtnGrid.jsx";
-import ScrollElm from "../UI/ScrollElm";
+import ScrollElm from "./ScrollElm";
 
 
 function HeroSection(props) {

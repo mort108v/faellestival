@@ -1,7 +1,7 @@
 import React, { useContext, useState } from "react";
 import { BandsContext } from "../../Contexts/BandsContext.js";
 import ArtistCard from "./ArtistCard.jsx";
-import ScrollElm from "./ScrollElm";
+import ScrollElm from "../sections/ScrollElm";
 
 function Carrousel(props) {
   const [pic1, setPick1] = useState(0);
