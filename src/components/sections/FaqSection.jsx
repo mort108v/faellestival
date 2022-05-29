@@ -1,6 +1,6 @@
 import React from "react";
 import SectionTitle from "../UI/SectionTitle";
-import BtnGrid from "./BtnGrid";
+import BtnGrid from "../UI/BtnGrid";
 
 function FaqSection(props) {
   function showFaq() {
@@ -14,10 +14,13 @@ function FaqSection(props) {
     console.log("showtickets");
   }
   return (
-    <section>
+    <section className={props.className}>
       <SectionTitle content="Are you gonna Miss It?" />
       <BtnGrid
         {...props}
+        className="btnGrid"
+        btn1className="secBtn"
+        btn2className="primBtn"
         btn1action={showFaq}
         btn1content="FAQ"
         btn2action={showTickets}

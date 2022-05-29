@@ -1,7 +1,7 @@
 import React, { useContext, useState } from "react";
 import { BandsContext } from "../../Contexts/BandsContext.js";
 import ArtistCard from "./ArtistCard.jsx";
-import ScrollElm from "../sections/ScrollElm";
+import ScrollElm from "./ScrollElm";
 
 function Carrousel(props) {
   const [pic1, setPick1] = useState(0);
@@ -29,7 +29,7 @@ function Carrousel(props) {
 
   return (
     <div className="carrousel">
-      <ScrollElm className="prev" action={showPrev} />
+      <ScrollElm className="scrollElm prev" action={showPrev} />
       <article className="artistGrid">
         <ArtistCard
           key={pic1}
@@ -87,7 +87,7 @@ function Carrousel(props) {
           }}
         />
       </article>
-      <ScrollElm className="next" action={showNext} />
+      <ScrollElm className="scrollElm next" action={showNext} />
     </div>
   );
 }

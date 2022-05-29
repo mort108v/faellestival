@@ -2,7 +2,7 @@ import React, { useState, useContext } from "react";
 import { TicketsContext } from "../Contexts/TicketsContext.js";
 import { AvailableContext } from "../Contexts/AvailableContext.js";
 import MainSect from "./sections/MainSect";
-import CardGrid from "./sections/CardGrid";
+import CardGrid from "./UI/CardGrid";
 import OrderForm from "./sections/OrderForm";
 
 function TicketsPage(props) {
@@ -26,11 +26,11 @@ function TicketsPage(props) {
   }
 
   return (
-  <section>
-      <MainSect content="Tickets" bcReg="Main" action={goToMain} {...props} />
-      <CardGrid ticketsContent={ticketsContent} setShowForm={setShowForm} soldOut={soldOut} />
+  <main>
+      <MainSect className="mainSect" content="Tickets" bcReg="Main" {...props} />
+      <CardGrid className="cardGrid" ticketsContent={ticketsContent} setShowForm={setShowForm} soldOut={soldOut} />
       {showForm && <OrderForm setShowForm={setShowForm} /> }
-  </section>
+  </main>
 
   );
 }

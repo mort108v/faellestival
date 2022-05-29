@@ -1,23 +1,20 @@
-import React, {useContext} from "react";
-import { BandsContext } from "../Contexts/BandsContext";
-
+import React, { useContext } from "react";
+// import ArtistBio from "./sections/ArtistBio";
+import ArtistsSection from "./sections/ArtistsSection";
+import ArtistHeader from "./sections/ArtistHeader";
 
 function ArtistPage(props) {
-  const bands = useContext(BandsContext)
+  // const bands = useContext(BandsContext);
   console.log("artist", props.pickedId);
 
   return (
     <>
-
-ARTIST PAGE
-
-{props.pickedId.name}
-
-      {/* <ArtistHeader {...props} />
-      <ArtistBio {...props} />
-      <ArtistSection {...props} />  */}
+      <ArtistHeader {...props} />
+      {/* <ArtistBio {...props} /> */}
+      <ArtistsSection content="See More Artists" className="artistSection" {...props} />
     </>
   );
 }
+
 
 export default ArtistPage;
