@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-// import ArtistBio from "./sections/ArtistBio";
+import ArtistBio from "./UI/ArtistBio";
 import ArtistsSection from "./sections/ArtistsSection";
 import ArtistHeader from "./sections/ArtistHeader";
 
@@ -10,11 +10,14 @@ function ArtistPage(props) {
   return (
     <>
       <ArtistHeader {...props} />
-      {/* <ArtistBio {...props} /> */}
-      <ArtistsSection content="See More Artists" className="artistSection" {...props} />
+      <ArtistBio {...props} />
+      <ArtistsSection
+        content="See More Artists"
+        className="artistSection"
+        {...props}
+      />
     </>
   );
 }
-
 
 export default ArtistPage;

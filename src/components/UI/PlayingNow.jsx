@@ -2,9 +2,13 @@ import React, { useContext, useState, useEffect } from "react";
 import { ScheduleContext } from "../../Contexts/ScheduleContext";
 import PlayingCard from "./PlayingCard";
 
-function PlayingNow() {
+function PlayingNow(props) {
   const schedule = useContext(ScheduleContext);
-  const [stageJNow, setStageJNow] = useState([]);
+  const [nowJotunheim, setNowJotunheim] = useState([]);
+  const [nowVanaheim, setNowVanaheim] = useState([]);
+  const [nowMidgard, setNowMidgard] = useState([]);
+  
+  let stages = Object.keys(schedule);
 
   let today = Date().split(" ");
   let [rawDay, , , , rawHour] = today;
@@ -15,51 +19,58 @@ function PlayingNow() {
   }
   let newHour = hour + ":00";
   let stageJArr = Object.entries(schedule.Jotunheim);
-  let chosenDay = stageJArr.filter((day) => day[0] == currDay);
-  let distrTime = [chosenDay[0][1]];
-  let chosenTime = [...distrTime[0]];
-  // let final = [ ...chosenTime];
-  // chosenTime.start == hour ? console.log(chosenTime.start) : [];
-  // let time = chosenTime.filter((timeslot) => timeslot.start == hour);
+  let getDayJ = stageJArr.filter((day) => day[0] == currDay);
+  let distrTimeJ = [getDayJ[0][1]];
+  let getTimeslotJ = [...distrTimeJ[0]];
+
+
+  let stageVArr = Object.entries(schedule.Vanaheim);
+  let getDayV = stageVArr.filter((day) => day[0] == currDay);
+  let distrTimeV = [getDayV[0][1]];
+  let getTimeslotV = [...distrTimeV[0]];
+
+  let stageMArr = Object.entries(schedule.Midgard);
+  let getDayM = stageMArr.filter((day) => day[0] == currDay);
+  let distrTimeM = [getDayM[0][1]];
+  let getTimeslotM = [...distrTimeM[0]];
 
   
   useEffect(() => {
-    for (let i = 0; i < chosenTime.length; i++) {
-      if (chosenTime[i].start == newHour) {
-        setStageJNow(chosenTime[i]);
+    for (let i = 0; i < getTimeslotJ.length; i++) {
+      if (getTimeslotJ[i].start == newHour) {
+        setNowJotunheim(getTimeslotJ[i]);
+      }
+    }
+
+    for (let i = 0; i < getTimeslotV.length; i++) {
+      if (getTimeslotV[i].start == newHour) {
+        setNowVanaheim(getTimeslotV[i]);
+      }
+    }
+
+    for (let i = 0; i < getTimeslotM.length; i++) {
+      if (getTimeslotM[i].start == newHour) {
+        setNowMidgard(getTimeslotM[i]);
       }
     }
     
   }, [newHour]);
-  // let thisday = chosenDay[1];
 
-  // const index = thisday.findIndex((timeslot) => timeslot.start = hour)
 
-  // const fruits = ["apple", "banana", "cantaloupe", "blueberries", "grapefruit"];
 
-  // const index = fruits.findIndex(fruit => fruit === "blueberries");
+function goToProgram() {
+  props.setShowFestLandPage(false);
+  props.setShowProgramPage(true);
+}
 
-  // console.log(index); // 3
-  // console.log(fruits[index]); // blueberries
-
-  function checkDate() {
-    // setActTime(chosenTime);
-    console.log(stageJNow);
-    // console.log(Object.keys(schedule[0]));
-  }
   return (
     <div className="cardGrid">
-      <PlayingCard jStage={stageJNow} />
+      <PlayingCard className="playCard" btnContent={stages[0]} btnClassName="primBtn" action={goToProgram} content={nowJotunheim} />
+      <PlayingCard className="playCard" btnContent={stages[1]} btnClassName="primBtn" action={goToProgram} content={nowVanaheim} />
+      <PlayingCard className="playCard" btnContent={stages[2]} btnClassName="primBtn" action={goToProgram} content={nowMidgard} />
     </div>
   );
 }
 
-{
-  /* <div className={props.className}>
-<Btn className="primBtn" content="When and Where" action={goToProgram} />
-<CardTitle />
-<CardContent />
-</div> */
-}
 
 export default PlayingNow;
