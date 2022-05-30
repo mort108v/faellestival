@@ -36,7 +36,7 @@ function TicketForm() {
     tentType: "",
     merchPack: 0,
     faellesCard: 0,
-    extraGuests: {},
+    extraGuests: [],
   });
 
   const FormTitles = [

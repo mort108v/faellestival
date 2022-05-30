@@ -5,6 +5,7 @@ function TicketAmountHandler({ formData, setFormData }) {
 
   function handleIncrement() {
     if (ticketCount < 6) {
+      setFormData({ ...formData, ticketAmount: ticketCount + 1 });
       setTicketCount((prevCount) => prevCount + 1);
     } else {
       alert("You reached max amount of tickets");
@@ -12,6 +13,7 @@ function TicketAmountHandler({ formData, setFormData }) {
   }
   function handleDecrement() {
     if (ticketCount > 0) {
+      setFormData({ ...formData, ticketAmount: ticketCount - 1 });
       setTicketCount((prevCount) => prevCount - 1);
     } else {
       return;
@@ -39,6 +41,7 @@ function TicketAmountHandler({ formData, setFormData }) {
           value={ticketCount}
           onChange={(e) => {
             console.log(formData.ticketAmount);
+            setTicketCount(e.target.value);
             setFormData({ ...formData, ticketAmount: e.target.value });
           }}
         />

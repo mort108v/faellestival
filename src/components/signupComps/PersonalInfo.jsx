@@ -2,57 +2,20 @@ import React, { useState, useEffect } from "react";
 
 function PersonalInfo({ formData, setFormData }) {
   const n = formData.ticketAmount;
+
   console.log(n);
   console.log(formData);
 
-  const [guestArray, setGuestArray] = useState([
-    {
-      id: "",
-      firstName: "",
-      lastName: "",
-      email: "",
-    },
-  ]);
-
-  //  const GuestData = {
-  //    firstNames: "",
-  //    lastNames: "",
-  //    emails: "",
-  //  }
-
-  let Guests = [
-    { id: 1, firstName: "", lastName: "", email: "" },
-    { id: 2, firstName: "", lastName: "", email: "" },
-    { id: 3, firstName: "", lastName: "", email: "" },
-    { id: 4, firstName: "", lastName: "", email: "" },
-    { id: 5, firstName: "", lastName: "", email: "" },
-    { id: 6, firstName: "", lastName: "", email: "" },
-  ];
-
-  function makeObject(data) {
-    const guestData = Object.create(Guests);
-
-    guestData.firstNames = data.firstName;
-    guestData.lastNames = data.lastName;
-    guestData.emails = data.email;
-  }
+  const [guestArray, setGuestArray] = useState([]);
 
   useEffect(() => {
-    // let guests = [
-    //   { id: 1, firstName: "", lastName: "", email: "" },
-    //   { id: 2, firstName: "", lastName: "", email: "" },
-    //   { id: 3, firstName: "", lastName: "", email: "" },
-    //   { id: 4, firstName: "", lastName: "", email: "" },
-    //   { id: 5, firstName: "", lastName: "", email: "" },
-    //   { id: 6, firstName: "", lastName: "", email: "" },
-    // ];
     setGuestArray(
-      Guests.map((d) => {
+      [...Array(n).keys()].map((d) => {
         return {
-          id: d.id,
-          firstName: d.firstName,
-          lastName: d.lastName,
-          email: d.email,
+          id: d,
+          firstName: "",
+          lastName: "",
+          email: "",
         };
       })
     );
@@ -67,15 +30,58 @@ function PersonalInfo({ formData, setFormData }) {
             id={d.id}
             placeholder="Guest First Name..."
             value={d.firstName}
-            // lastName={d.lastName}
-            // email={d.email}
-            onChange={(event) => {
-              makeObject(event.target.value);
+            onChange={(e) => {
+              const nextGuests = guestArray.map((guest) => {
+                if (d.id === guest.id) {
+                  return { ...guest, firstName: e.target.value };
+                }
+                return guest;
+              });
+              setGuestArray(nextGuests);
+              setFormData({
+                ...formData,
+                extraGuests: nextGuests,
+              });
             }}
           ></input>
-          <div>
-            <span>*Guest {n}</span>
-          </div>
+          <input
+            type="text"
+            id={d.id}
+            placeholder="Guest Last Name..."
+            value={d.lastName}
+            onChange={(e) => {
+              const nextGuests = guestArray.map((guest) => {
+                if (d.id === guest.id) {
+                  return { ...guest, lastName: e.target.value };
+                }
+                return guest;
+              });
+              setGuestArray(nextGuests);
+              setFormData({
+                ...formData,
+                extraGuests: nextGuests,
+              });
+            }}
+          ></input>
+          <input
+            type="text"
+            id={d.id}
+            placeholder="Guest E-mail Name..."
+            value={d.email}
+            onChange={(e) => {
+              const nextGuests = guestArray.map((guest) => {
+                if (d.id === guest.id) {
+                  return { ...guest, email: e.target.value };
+                }
+                return guest;
+              });
+              setGuestArray(nextGuests);
+              setFormData({
+                ...formData,
+                extraGuests: nextGuests,
+              });
+            }}
+          ></input>
         </div>
       ))}
     </div>

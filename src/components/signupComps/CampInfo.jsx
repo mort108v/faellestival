@@ -1,6 +1,7 @@
 import React from "react";
 
 function CampInfo({ formData, setFormData }) {
+  console.log(formData);
   return (
     <div className="personal-info-container">
       <input
