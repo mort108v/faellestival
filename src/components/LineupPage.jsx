@@ -7,6 +7,9 @@ function LineupPage() {
   // const bands = useContext(BandsContext);
   // mondayData = {day: "Monday", date: "July 27th"};
 
+  const week = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
+  const dayShort = ["mon", "tue", "wed", "thu", "fri", "sat", "sun"];
+
   let monBands = [
     ...scheduleData.Jotunheim.mon,
     ...scheduleData.Vanaheim.mon,
@@ -30,12 +33,20 @@ function LineupPage() {
 
   return (
     <div>
-      {dayProgram.map((timeslot) => {
+
+      {dayShort.map((day, index) => (
+        <>
+      <div>
+        {week[index]}</div>
+        <p>{scheduleData.Jotunheim[day].map((day) => <span>{day.act}</span>)}</p>
+        </>))}
+
+      {/* {dayProgram.map((timeslot) => {
         if (timeslot.act.includes("break")) {
         } else {
           return <li>{timeslot.act}</li>;
         }
-      })}
+      })} */}
       {/* {mondaybandsV.map((timeslot) => {
       if (timeslot.act.includes("break")) {} else {
         return <li>{timeslot.act}</li>
