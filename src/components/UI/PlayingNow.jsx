@@ -19,6 +19,7 @@ function PlayingNow(props) {
   }
   let newHour = hour + ":00";
   let stageJArr = Object.entries(schedule.Jotunheim);
+  // let stageJArr = [Object.entries(]schedule.Jotunheim);
   let getDayJ = stageJArr.filter((day) => day[0] == currDay);
   let distrTimeJ = [getDayJ[0][1]];
   let getTimeslotJ = [...distrTimeJ[0]];

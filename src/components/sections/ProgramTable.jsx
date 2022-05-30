@@ -5,13 +5,11 @@ import Title from "../UI/Title";
 
 function ProgramTable() {
   const schedule = useContext(ScheduleContext);
-  const [dayProgram, setDayProgram] = useState([]);
   const [day, setDay] = useState("Monday");
-  const [vStage, setVStage] = useState(schedule.Vanaheim);
-  const [mStage, setMStage] = useState(schedule.Midgard);
 
-
-  let xday = day.toLowerCase().substring(0, 3);
+const vStage = schedule.Vanaheim;
+const mStage = schedule.Midgard;
+let xday = day.toLowerCase().substring(0, 3);
   console.log(xday);
 
   return (
