@@ -1,7 +1,6 @@
-import React, { useState, useEffect, useContext } from "react";
+import React, { useState, useEffect } from "react";
 import TicketAmountHandler from "./TicketAmountHandler";
 import DayContainer from "./DayContainer";
-// import { FormContext } from "../../Contexts/FormContext";
 
 function TicketContent({ formData, setFormData, checkboxLabels }) {
   const [typeIsChecked, setTypeIsChecked] = useState([]);
@@ -45,6 +44,7 @@ function TicketContent({ formData, setFormData, checkboxLabels }) {
       })
     );
   }, []);
+
   useEffect(() => {
     let dayIsChecked = [
       { id: 6, ticketDay: checkboxLabels[5] },

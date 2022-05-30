@@ -1,11 +1,12 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import ConfirmInfo from "./ConfirmInfo";
 import TicketContent from "./TicketContent";
 import PersonalInfo from "./PersonalInfo";
 import ExtrasInfo from "./ExtrasInfo";
 import CampInfo from "./CampInfo";
+import TimeCount from "./TimeCount";
 
-function TicketForm() {
+function TicketForm(props) {
   const [page, setPage] = useState(0);
 
   const [formData, setFormData] = useState({
@@ -23,12 +24,11 @@ function TicketForm() {
     agreeTerms: "",
     agreeSocial: "",
     ticketAmount: 0,
-    isUnderage: false,
     cardFee: 0,
     campsite: "",
     tentSetup: 0,
-    tentType: "",
-    merchPack: 0,
+    luxePack: 0,
+    greenCamp: 0,
     faellesCard: 0,
     extraGuests: [],
   });
@@ -69,6 +69,7 @@ function TicketForm() {
     if (page === 0) {
       return (
         <TicketContent
+          ticketType={props.ticketType}
           checkboxLabels={checkboxLabels}
           formData={formData}
           setFormData={setFormData}
@@ -119,6 +120,9 @@ function TicketForm() {
                 : "100%",
           }}
         ></div>
+        <div className="countdown-timer">
+          <TimeCount />
+        </div>
       </div>
       <div className="form-container ">
         <div className="header">
