@@ -20,7 +20,7 @@ function HeroSection(props) {
     <section className={props.className}>
       <Header className="header" />
       <TimeTick />
-      <Title className="heroTxt" content="26 of July • Stenstrup" />
+      <Title className="heroTxt" content="25 - 31 of July • Stenstrup" />
       <BtnGrid
         {...props}
         btn1action={showLineup}
