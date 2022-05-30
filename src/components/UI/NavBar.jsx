@@ -70,7 +70,7 @@ function NavBar(props) {
         />
       )}
       {props.showLandPage && (
-        <Btn action={goToFestApp} content="Fest App" className="primBtn" />
+        <Btn action={goToFestApp} content="Fest App" className="primBtn" id="festApp" />
       )}
       {props.showLandPage && (
         <Btn content="☰" action={openBurger} className="burgerBtn" />

@@ -4,8 +4,7 @@ import Banner from "../UI/Banner";
 import Artist from "../UI/Artist";
 
 function BannerSection(props) {
-  const [count, setCount] = useState(1);
-  let limit = 4;
+  const [currentSlide, setCurrentSlide] = useState(1);
 
   // useEffect(() => {
   //   const intervalBanner =
@@ -29,6 +28,24 @@ function BannerSection(props) {
   //   }
 
   // }, []);
+  useEffect(() => { 
+    setTimeout;
+    if (currentSlide <= 4) {
+      setTimeout(() => {
+        setCurrentSlide(currentSlide + 1);
+      }, 4000);
+    } else {
+   setCurrentSlide(1)
+     
+       
+    }
+  }, [currentSlide]);
+
+
+
+
+
+
 
   const bandsData = useContext(BandsContext);
 
@@ -43,16 +60,25 @@ function BannerSection(props) {
 
   return (
     <section className={props.className}>
-      {count == 1 && <Banner className="banner1">{data[0]}</Banner>}
-      {count == 2 && <Banner className="gradientTxt">{data[1]}</Banner>}
-      {count == 3 && <Banner className="banner1">{data[2]}</Banner>}
-      {count == 4 && (
-        <Banner className="gradientTxt">
+    {currentSlide===1 &&<Banner conClassName="bannerCon" id="b1" className="banner1">
+        {data[0]}
+      </Banner>}
+      {currentSlide===2 &&
+        <Banner conClassName="bannerCon" className="gradientTxt">
+          {data[1]}
+        </Banner>}
+      {currentSlide===3 &&
+        <Banner conClassName="bannerCon" id="b2" className="banner1">
+          {data[2]}
+        </Banner>
+      }
+      {currentSlide===4 &&
+        <Banner conClassName="bannerCon" className="gradientTxt">
           {bandsGenre.map((genre) => (
             <Artist key={Math.random()} content={genre} />
           ))}
         </Banner>
-      )}
+      }
     </section>
   );
 }

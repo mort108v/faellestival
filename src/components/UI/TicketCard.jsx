@@ -31,4 +31,3 @@ function TicketCard(props) {
 }
 
 export default TicketCard;
-

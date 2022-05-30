@@ -1,11 +1,12 @@
-import React from 'react'
+import React from "react";
+import TicketForm from "../signupComps/TicketForm";
 
 function OrderForm() {
-    return (
-        <div>
-            
-        </div>
-    )
+  return (
+    <div className="formBase">
+      <TicketForm />
+    </div>
+  );
 }
 
-export default OrderForm
+export default OrderForm;
