@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import Clock from "../UI/Clock";
+import Clock from "./Clock";
 
 // Clock countdown to open
 const TimeTick = () => {

@@ -1,6 +1,6 @@
 import React from "react";
 import Header from "./Header";
-import TimeTick from "./TimeTick";
+import TimeTick from "../UI/TimeTick";
 import Title from "../UI/Title";
 import BtnGrid from "../UI/BtnGrid";
 import ScrollElm from "./ScrollElm";
