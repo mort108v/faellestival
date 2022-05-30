@@ -23,7 +23,7 @@ let x = setInterval(function() {
 
     return (
         <div>
-        <div>
+        <div className='Timer'>
             <p>{x}</p>
             <p>Days</p>
         </div>

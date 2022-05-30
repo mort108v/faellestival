@@ -1,12 +1,16 @@
-import React from 'react'
+import React from "react";
 
 function FaqCard(props) {
   return (
-    <div>
-        <h3>Question:{props.qContent}</h3>
-        <p>Answer:{props.aContent}</p>
+    <div className="faq-content">
+      <div className="faq-section">
+        <h3 className="faq-question">{props.qContent}</h3>
+        <p className="faq-answer">
+          <span className="answer-span">Answer:</span> {props.aContent}
+        </p>
+      </div>
     </div>
-  )
+  );
 }
 
-export default FaqCard
+export default FaqCard;
