@@ -6,6 +6,7 @@ import ArtistPage from "./ArtistPage";
 import ProgramPage from "./ProgramPage";
 import FaellesCardPage from "./FaellesCardPage";
 import BurgerMenu from "./UI/BurgerMenu";
+import MapPage from "./MapPage";
 // import { BandsContext } from "../Contexts/BandsContext.js";
 import { LoginContext } from "../Contexts/LoginContext.js";
 import { AvailableContext } from "../Contexts/AvailableContext.js";
@@ -19,6 +20,7 @@ function FestApp(props) {
   const [showProgramPage, setShowProgramPage] = useState(false);
   const [showFCardPage, setShowFCardPage] = useState(false);
   const [pickedId, setPickedId] = useState([]);
+  const [showMapPage, setShowMapPage] = useState(false);
 
   return (
     <>
@@ -31,20 +33,21 @@ function FestApp(props) {
         showFestLandPage={showFestLandPage}
         shoArtistdPage={showArtistPage}
         showProgramPage={showProgramPage}
+        setShowMapPage={setShowMapPage}
       />
-  {   props.showBurgerMenu && <BurgerMenu
-        {...props}
-        setShowFestLandPage={setShowFestLandPage}
-        setShoArtistdPage={setShowArtistPage}
-        setShowProgramPage={setShowProgramPage}
-        className="burgerMenu"
-        showFestLandPage={showFestLandPage}
-        shoArtistdPage={showArtistPage}
-        showProgramPage={showProgramPage}
-      />}
-
-
-
+      {props.showBurgerMenu && (
+        <BurgerMenu
+          {...props}
+          setShowFestLandPage={setShowFestLandPage}
+          setShoArtistdPage={setShowArtistPage}
+          setShowProgramPage={setShowProgramPage}
+          className="burgerMenu"
+          showFestLandPage={showFestLandPage}
+          shoArtistdPage={showArtistPage}
+          showProgramPage={showProgramPage}
+          setShowMapPage={setShowMapPage}
+        />
+      )}
 
       {showFestLandPage && (
         <FestLandPage
@@ -54,6 +57,7 @@ function FestApp(props) {
           setShowFCardPage={setShowFCardPage}
           pickedId={pickedId}
           setPickedId={setPickedId}
+          setShowMapPage={setShowMapPage}
         />
       )}
       {showArtistPage && (
@@ -71,6 +75,12 @@ function FestApp(props) {
           setShowProgramPage={setShowProgramPage}
         />
       )}
+      {showMapPage && (
+        <MapPage
+          setShowFestLandPage={setShowFestLandPage}
+          setShowMapPage={setShowMapPage}
+        />
+      )}
       {showFCardPage && (
         <FaellesCardPage
           setShowFestLandPage={setShowFestLandPage}
@@ -82,6 +92,7 @@ function FestApp(props) {
         setShowArtistdPage={setShowArtistPage}
         setShowProgramPage={setShowProgramPage}
         setShowFCardPage={setShowFCardPage}
+        setShowMapPage={setShowMapPage}
       />
     </>
   );

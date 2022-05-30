@@ -7,9 +7,9 @@ function ProgramTable() {
   const schedule = useContext(ScheduleContext);
   const [day, setDay] = useState("Monday");
 
-const vStage = schedule.Vanaheim;
-const mStage = schedule.Midgard;
-let xday = day.toLowerCase().substring(0, 3);
+  const vStage = schedule.Vanaheim;
+  const mStage = schedule.Midgard;
+  let xday = day.toLowerCase().substring(0, 3);
   console.log(xday);
 
   return (
@@ -26,7 +26,7 @@ let xday = day.toLowerCase().substring(0, 3);
           </tr>
         </thead>
         <tbody>
-            {/* {showTable()} */}
+          {/* {showTable()} */}
           {schedule.Jotunheim[xday].map((timeslot, index) => (
             <tr key={index}>
               <td>{timeslot.start}</td>

@@ -1,16 +1,14 @@
 import React from "react";
-import mapSpots from "/mapSpots.svg";
 import Title from "./UI/Title";
 import ProgramTable from "./sections/ProgramTable";
+import MainSect from "./sections/MainSect";
 
 function ProgramPage(props) {
   return (
     <section>
-      <div className="map">
-        <img src={mapSpots} alt="map" />
-      </div>
-      <section>
-        <Title content="Program" className="title" />
+      <MainSect bcFest="Main" className="programHeader" content="Program" />
+      <section className="list">
+        {/* <Title content="Program" className="title" /> */}
         <ProgramTable />
       </section>
     </section>
@@ -18,3 +16,10 @@ function ProgramPage(props) {
 }
 
 export default ProgramPage;
+
+// {/* <section className={props.className}>
+//       {props.bcReg && <Breadcrumbs className="breadCrumbs" bc={props.bcReg} action={props.action} />}
+//       {/* {props.bcFest && <Breadcrumbs bc={props.bcFest} action={goToFestApp} />} */}
+//       <HeaderBg className="heroBg" />
+//       <MainTitle className="mainTitle" content={props.content} />
+//     </section> */}

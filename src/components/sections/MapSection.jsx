@@ -4,7 +4,7 @@ import Btn from "../UI/Btn";
 function MapSection(props) {
   function goToMap() {
     props.setShowFestLandPage(false);
-    props.setShowProgramPage(true);
+    props.setShowMapPage(true);
   }
   return (
     <section className={props.className}>

@@ -10,6 +10,8 @@ function FestLinks(props) {
     props.setShowFestLandPage(false);
     props.setShowArtistdPage(false);
     props.setShowFCardPage(false);
+    props.setShowMapPage(false);
+
     console.log("go to programpage");
   }
   function goToArtistsPage() {
@@ -17,6 +19,15 @@ function FestLinks(props) {
     props.setShowFestLandPage(false);
     props.setShowProgramPage(false);
     props.setShowFCardPage(false);
+    props.setShowMapPage(false);
+    console.log("go to artistprogrampage");
+  }
+  function goToMapPage() {
+    props.setShowMapPage(true);
+    props.setShowFestLandPage(false);
+    props.setShowProgramPage(false);
+    props.setShowFCardPage(false);
+    props.setShowArtistdPage(false);
     console.log("go to artistprogrampage");
   }
 
@@ -29,6 +40,7 @@ function FestLinks(props) {
     props.setShowArtistdPage(false);
     props.setShowProgramPage(false);
     props.setShowFCardPage(true);
+    props.setShowMapPage(false);
     console.log("go to mainpage");
   }
   return (
@@ -36,6 +48,7 @@ function FestLinks(props) {
       <Link className="link" content="Program" action={goToProgramPage} />
       <Link className="link" content="Artists" action={goToArtistsPage} />
       <Link className="link" content="Main Page" action={goTomainPage} />
+      <Link className="link" content="Map" action={goToMapPage} />
       <Link
         className="link"
         content="Your Faelles Card"
