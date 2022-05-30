@@ -28,37 +28,36 @@
 // );
 // $yellow: #e89832;
 // $orange: #dc6940;
-
-@import "./config";
-@import "./UI/buttons.scss";
-@import "./tickets/tickets.scss";
-@import "./artist/artistcard.scss";
-@import "./artist/artistPage.scss";
-@import "./grids/artistgrid.scss";
-@import "./header/header.scss";
-@import "./landingPage/banner.scss";
-@import "./festApp/cards.scss";
-@import "./festApp/program.scss";
-@import "./landingPage/faq-page.scss";
-@import "./artist/artistpage.scss";
-
+@import "config";
+@import "./UI/buttons";
+@import "./tickets/tickets";
+@import "./artist/artistcard";
+@import "./artist/artistPage";
+@import "./grids/artistgrid";
+@import "./header/header";
+@import "./festApp/cards";
+@import "./festApp/program";
+@import "./landingPage/banner";
+@import "./landingPage/faq-page";
+@import "./artist/artistpage";
+@import "./sections/ticketForm";
+@import "./sections/drawborder";
 //GLOBAL STYLING
-
 :root {
-  --img: url("https://faellestival.dk/wp/wp-content/uploads/2018/09/cropped-MG_8034-1.jpg");
+    --img: url("https://faellestival.dk/wp/wp-content/uploads/2018/09/cropped-MG_8034-1.jpg");
 }
 
 body {
-  margin: 0;
-  box-sizing: border-box;
-  background-color: $dark-bg;
-  background-image: $grainy;
-  color: white;
-  font-family: $body-font;
+    margin: 0;
+    box-sizing: border-box;
+    background-color: $dark-bg;
+    background-image: $grainy;
+    color: white;
+    font-family: $body-font;
 }
 
 button {
-  cursor: pointer;
+    cursor: pointer;
 }
 
 // .primBtn {
@@ -73,21 +72,17 @@ button {
 //   background-clip: content-box, border-box;
 //   box-shadow: 2px 1000px 1px $dark-poster inset;
 //   transition: all 0.5s;
-
 //   &:hover {
 //     background-image: linear-gradient($dark-bg, $dark-bg), $hover-gradient;
 //     color: $yellow;
 //   }
-
 // }
-
 // .secBtn {
 //   text-transform: uppercase;
 //   font-size: 1.3rem;
 //   background: none;
 //   border: none;
 //   color: white;
-
 //   &::after {
 //     max-width: 100%;
 //     height: 0.5rem;
@@ -98,146 +93,38 @@ button {
 //     margin-bottom: -6px;
 //     margin-top: 1px;
 //   }
-
 //   &:hover::after {
 //     background: $hover-gradient;
 //   }
 // }
-
 //REGULAR APP LAND PAGE
-
 // .header {
 //   display: flex;
 //   flex-direction: column;
 //   justify-content: center;
 //   align-items: center;
 // }
-
 .heroTitle {
-  font-family: $display-font;
-  font-size: 6rem;
-  text-align: center;
-  margin-top: 0;
+    font-family: $display-font;
+    font-size: 6rem;
+    text-align: center;
+    margin-top: 0;
 }
 
 .heroBg {
-  background-image: url("/wavy-banner2.png");
-  clip-path: polygon(
-    100% 0%,
-    0% 0%,
-    0% 91.72%,
-    1% 91.69%,
-    2% 91.63%,
-    3% 91.51%,
-    4% 91.36%,
-    5% 91.16%,
-    6% 90.92%,
-    7% 90.64%,
-    8% 90.31%,
-    9% 89.95%,
-    10% 89.55%,
-    11% 89.12%,
-    12% 88.66%,
-    13% 88.16%,
-    14% 87.63%,
-    15% 87.08%,
-    16% 86.51%,
-    17% 85.91%,
-    18% 85.3%,
-    19% 84.67%,
-    20% 84.03%,
-    21% 83.37%,
-    22% 82.72%,
-    23% 82.05%,
-    24% 81.39%,
-    25% 80.73%,
-    26% 80.08%,
-    27% 79.43%,
-    28% 78.8%,
-    29% 78.18%,
-    30% 77.58%,
-    31% 77%,
-    32% 76.44%,
-    33% 75.91%,
-    34% 75.4%,
-    35% 74.92%,
-    36% 74.48%,
-    37% 74.07%,
-    38% 73.7%,
-    39% 73.36%,
-    40% 73.07%,
-    41% 72.82%,
-    42% 72.6%,
-    43% 72.43%,
-    44% 72.31%,
-    45% 72.23%,
-    46% 72.19%,
-    47% 72.2%,
-    48% 72.25%,
-    49% 72.35%,
-    50% 72.49%,
-    51% 72.68%,
-    52% 72.91%,
-    53% 73.18%,
-    54% 73.49%,
-    55% 73.84%,
-    56% 74.23%,
-    57% 74.65%,
-    58% 75.1%,
-    59% 75.59%,
-    60% 76.11%,
-    61% 76.65%,
-    62% 77.22%,
-    63% 77.81%,
-    64% 78.42%,
-    65% 79.04%,
-    66% 79.68%,
-    67% 80.33%,
-    68% 80.99%,
-    69% 81.65%,
-    70% 82.31%,
-    71% 82.97%,
-    72% 83.63%,
-    73% 84.27%,
-    74% 84.91%,
-    75% 85.54%,
-    76% 86.14%,
-    77% 86.73%,
-    78% 87.3%,
-    79% 87.84%,
-    80% 88.35%,
-    81% 88.84%,
-    82% 89.29%,
-    83% 89.71%,
-    84% 90.1%,
-    85% 90.44%,
-    86% 90.75%,
-    87% 91.02%,
-    88% 91.24%,
-    89% 91.42%,
-    90% 91.56%,
-    91% 91.66%,
-    92% 91.71%,
-    93% 91.71%,
-    94% 91.67%,
-    95% 91.59%,
-    96% 91.46%,
-    97% 91.29%,
-    98% 91.07%,
-    99% 90.81%,
-    100% 90.52%
-  );
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  height: 22vw;
+    background-image: url("/wavy-banner2.png");
+    clip-path: polygon( 100% 0%, 0% 0%, 0% 91.72%, 1% 91.69%, 2% 91.63%, 3% 91.51%, 4% 91.36%, 5% 91.16%, 6% 90.92%, 7% 90.64%, 8% 90.31%, 9% 89.95%, 10% 89.55%, 11% 89.12%, 12% 88.66%, 13% 88.16%, 14% 87.63%, 15% 87.08%, 16% 86.51%, 17% 85.91%, 18% 85.3%, 19% 84.67%, 20% 84.03%, 21% 83.37%, 22% 82.72%, 23% 82.05%, 24% 81.39%, 25% 80.73%, 26% 80.08%, 27% 79.43%, 28% 78.8%, 29% 78.18%, 30% 77.58%, 31% 77%, 32% 76.44%, 33% 75.91%, 34% 75.4%, 35% 74.92%, 36% 74.48%, 37% 74.07%, 38% 73.7%, 39% 73.36%, 40% 73.07%, 41% 72.82%, 42% 72.6%, 43% 72.43%, 44% 72.31%, 45% 72.23%, 46% 72.19%, 47% 72.2%, 48% 72.25%, 49% 72.35%, 50% 72.49%, 51% 72.68%, 52% 72.91%, 53% 73.18%, 54% 73.49%, 55% 73.84%, 56% 74.23%, 57% 74.65%, 58% 75.1%, 59% 75.59%, 60% 76.11%, 61% 76.65%, 62% 77.22%, 63% 77.81%, 64% 78.42%, 65% 79.04%, 66% 79.68%, 67% 80.33%, 68% 80.99%, 69% 81.65%, 70% 82.31%, 71% 82.97%, 72% 83.63%, 73% 84.27%, 74% 84.91%, 75% 85.54%, 76% 86.14%, 77% 86.73%, 78% 87.3%, 79% 87.84%, 80% 88.35%, 81% 88.84%, 82% 89.29%, 83% 89.71%, 84% 90.1%, 85% 90.44%, 86% 90.75%, 87% 91.02%, 88% 91.24%, 89% 91.42%, 90% 91.56%, 91% 91.66%, 92% 91.71%, 93% 91.71%, 94% 91.67%, 95% 91.59%, 96% 91.46%, 97% 91.29%, 98% 91.07%, 99% 90.81%, 100% 90.52%);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 22vw;
 }
 
 .gradientTxt {
-  color: white;
-  background: $orange-gradient;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+    color: white;
+    background: $orange-gradient;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 // .artistGrid {
@@ -250,11 +137,10 @@ button {
 //   padding-top: 5rem;
 //   padding-bottom: 5rem;
 // }
-
 .carrousel {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 // .artistCard {
@@ -273,7 +159,6 @@ button {
 //   flex-direction: column;
 //   justify-content: flex-end;
 //   box-shadow: $card-shadow;
-
 //   h3 {
 //     color: white;
 //     text-transform: uppercase;
@@ -290,9 +175,7 @@ button {
 //     opacity: 1;
 //   }
 // }
-
 //TICKETS PAGE
-
 // .ticketCard {
 //   text-align: center;
 //   color: white;
@@ -302,11 +185,9 @@ button {
 //   background: $dark-poster;
 //   margin-top: 1rem;
 //   // padding-bottom: 1rem;
-
 //   &:hover {
 //     box-shadow: $hov-card-sh;
 //   }
-
 //   .ticketTitle {
 //     background-image: linear-gradient(rgba(0, 0, 0, 0.13), rgb(0, 0, 0)),
 //       url("https://faellestival.dk/wp/wp-content/uploads/2018/09/cropped-MG_8034-1.jpg");
@@ -426,12 +307,10 @@ button {
 //     line-height: 1rem;
 //     padding-bottom: 2rem;
 //   }
-
 //   .out {
 //     position: relative;
 //     top: 40px;
 //   }
-
 //   .card-content {
 //     border-bottom-left-radius: $card-border;
 //     border-bottom-right-radius: $card-border;
