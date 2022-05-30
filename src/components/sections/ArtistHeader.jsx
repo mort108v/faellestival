@@ -17,7 +17,7 @@ function ArtistHeader(props) {
   return (
     <section className="artistHeader">
       <Breadcrumbs bc="Main" className="breadCrumbs" action={goToMain} />
-      <img src={imgPath} alt={props.pickedId.name} />
+      {imgPath.endsWith("svg") ? <img className="artistPng" src={imgPath} alt={props.pickedId.name} /> : <img className="artistImg" src={imgPath} alt={props.pickedId.name} />}
       <MainTitle className="mainTitle" content={props.pickedId.name} />
     </section>
   );
