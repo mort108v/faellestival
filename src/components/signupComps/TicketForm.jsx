@@ -7,13 +7,7 @@ import CampInfo from "./CampInfo";
 
 function TicketForm() {
   const [page, setPage] = useState(0);
-  const [extrasData, setExtrasData] = useState({
-    usersEmails: [],
-    usersFirstNames: [],
-    usersLastNames: [],
-    usersIds: [],
-    usersUnderage: [],
-  });
+
   const [formData, setFormData] = useState({
     userEmail: "",
     userPassword: "",
@@ -41,8 +35,8 @@ function TicketForm() {
 
   const FormTitles = [
     "Select Tickets",
-    "Personal Info",
     "Choose Campsite",
+    "Personal Info",
     "Choose Extras",
     "Confirm Your E-mail",
     "Checkout Cart",
@@ -64,6 +58,11 @@ function TicketForm() {
     "Tent Setup",
     "Agree to Terms",
     "Agree to Membership",
+    "Helheim",
+    "Svartheim",
+    "Nilfheim",
+    "Muspelheim",
+    "Alfheim",
   ];
 
   const PageDisplay = () => {
@@ -77,15 +76,14 @@ function TicketForm() {
       );
     } else if (page === 1) {
       return (
-        <PersonalInfo
+        <CampInfo
           formData={formData}
           setFormData={setFormData}
-          extrasData={extrasData}
-          setExtrasData={setExtrasData}
+          checkboxLabels={checkboxLabels}
         />
       );
     } else if (page === 2) {
-      return <CampInfo formData={formData} setFormData={setFormData} />;
+      return <PersonalInfo formData={formData} setFormData={setFormData} />;
     } else if (page === 3) {
       return <ExtrasInfo formData={formData} setFormData={setFormData} />;
     } else if (page === 4) {
