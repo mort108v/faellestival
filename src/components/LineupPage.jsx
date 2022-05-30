@@ -1,63 +1,29 @@
 import React, { useContext } from "react";
 // import { BandsContext } from "../Contexts/BandsContext";
 import { ScheduleContext } from "../Contexts/ScheduleContext";
+import Artist from "./UI/Artist";
+import CardTitle from "./UI/CardTitle"
 
 function LineupPage() {
   const scheduleData = useContext(ScheduleContext);
-  // const bands = useContext(BandsContext);
-  // mondayData = {day: "Monday", date: "July 27th"};
 
   const week = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
+  const date= ["25th of July", "26th of July", "27th of July", "28th of July", "29th of July", "30th of July", "31th of July"]
   const dayShort = ["mon", "tue", "wed", "thu", "fri", "sat", "sun"];
 
-  let monBands = [
-    ...scheduleData.Jotunheim.mon,
-    ...scheduleData.Vanaheim.mon,
-    ...scheduleData.Midgard.mon,
-  ];
-  let tuesBands = [
-    ...scheduleData.Jotunheim.tue,
-    ...scheduleData.Vanaheim.tue,
-    ...scheduleData.Midgard.tue,
-  ];
-  // let mondaybandsV = scheduleData.Vanaheim.mon;
-  // let mondaybandsJ = scheduleData.Jotunheim.mon;
-
-  let dayProgram = [...monBands, ...tuesBands];
-  // let WeekPlan = ;
-
-  // {weekPlan.map((timeslot) => {
-  //   if (timeslot.act.includes("break")) {} else {
-  //     return <DayCard data={{timeslot.act}} />
-  //   }})}
-
   return (
-    <div>
+    <div className="lineupGrid">
 
       {dayShort.map((day, index) => (
-        <>
-      <div>
-        {week[index]}</div>
-        <p>{scheduleData.Jotunheim[day].map((day) => <span>{day.act}</span>)}</p>
-        </>))}
+        <div className="lineupCard">
+        <CardTitle className="lineupTitle" head={week[index]} subHead={date[index]} />
+        <p className="lineupCardContent">
+          {scheduleData.Jotunheim[day].map((day) => <Artist content={day.act} />)}
+          {scheduleData.Vanaheim[day].map((day) => <Artist content={day.act} />)}
+          {scheduleData.Midgard[day].map((day) => <Artist content={day.act} />)}
+          </p>
+        </div>))}
 
-      {/* {dayProgram.map((timeslot) => {
-        if (timeslot.act.includes("break")) {
-        } else {
-          return <li>{timeslot.act}</li>;
-        }
-      })} */}
-      {/* {mondaybandsV.map((timeslot) => {
-      if (timeslot.act.includes("break")) {} else {
-        return <li>{timeslot.act}</li>
-      }})}
-            {mondaybandsJ.map((timeslot) => {
-      if (timeslot.act.includes("break")) {} else {
-        return <li>{timeslot.act}</li>
-      }})} */}
-
-      {/* <button onClick={manageClick}>consolelog</button>
-      LineupPage */}
     </div>
   );
 }
