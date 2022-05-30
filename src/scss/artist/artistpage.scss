@@ -2,3 +2,12 @@
   width: calc(100vw - 50vw);
   margin: 0 auto;
 }
+
+.artistHeader {
+  .artistPng,
+  .artistImg {
+    width: 100%;
+    background-color: white;
+    filter: opacity(30%);
+  }
+}
