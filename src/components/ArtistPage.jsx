@@ -12,8 +12,9 @@ function ArtistPage(props) {
       <ArtistHeader {...props} />
       <ArtistBio {...props} />
       <ArtistsSection
+        // id="carousel-title"
+        className="artistSection carousel-title"
         content="See More Artists"
-        className="artistSection"
         {...props}
       />
     </>
