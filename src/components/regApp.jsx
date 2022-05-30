@@ -1,17 +1,17 @@
 import React, { useContext, useState } from "react";
 // import { BandsContext } from "../Contexts/BandsContext.js";
-import { LoginContext } from "../Contexts/LoginContext.js";
+import { LoginContext } from "../Contexts/LoginContext";
 
 // import { TicketsContext } from "../Contexts/TicketsContext.js";
 // import { ScheduleContext } from "../Contexts/ScheduleContext.js";
-import { ScheduleContext } from "../Contexts/ScheduleContext.js";
-import NavBar from "./UI/NavBar.jsx";
+// import { ScheduleContext } from "../Contexts/ScheduleContext.js";
+import NavBar from "./UI/NavBar";
 import LandingPage from "./LandingPage";
 import LineupPage from "./LineupPage";
 import TicketsPage from "./TicketsPage";
 import Footer from "./Footer";
-import FaqPage from "./FaqPage.jsx";
-import BurgerMenu from "./UI/BurgerMenu.jsx";
+import FaqPage from "./FaqPage";
+import BurgerMenu from "./UI/BurgerMenu";
 
 function RegApp(props) {
   const { isLogin, setIsLogin } = useContext(LoginContext);
@@ -39,26 +39,28 @@ function RegApp(props) {
         showTicketsPage={showTicketsPage}
         showLineup={showLineup}
       />
-        {/* const [showBurgerMenu, setShowBurgerMenu] = useState(false); */}
-{props.showBurgerMenu && <BurgerMenu
-        {...props}
-        setShowTicketsPage={setShowTicketsPage}
-        setShowLineup={setShowLineup}
-        setShowLandPage={setShowLandPage}
-        className="mobileBurgerMenu"
-        showLandPage={showLandPage}
-        showTicketsPage={showTicketsPage}
-        showLineup={showLineup}
-      />}
+      {/* const [showBurgerMenu, setShowBurgerMenu] = useState(false); */}
+      {props.showBurgerMenu && (
+        <BurgerMenu
+          {...props}
+          setShowTicketsPage={setShowTicketsPage}
+          setShowLineup={setShowLineup}
+          setShowLandPage={setShowLandPage}
+          className="mobileBurgerMenu"
+          showLandPage={showLandPage}
+          showTicketsPage={showTicketsPage}
+          showLineup={showLineup}
+        />
+      )}
       {showLandPage && (
         <LandingPage
           setShowTicketsPage={setShowTicketsPage}
           setShowLineup={setShowLineup}
           setShowLandPage={setShowLandPage}
-// {<<<<<<< who-is-playing-now
+          // {<<<<<<< who-is-playing-now
           setShowFaqPage={setShowFaqPage}
-// =======}
-//             {>>>>>>> main}
+          // =======}
+          //             {>>>>>>> main}
         />
       )}
       {showLineup && (
@@ -84,9 +86,14 @@ function RegApp(props) {
           setShowFaqPage={setShowFaqPage}
         />
       )}
-      
+
       <button onClick={handleClick}>Click LOGIN</button>
-      <Footer setShowTicketsPage={setShowTicketsPage} setShowLineup={setShowLineup} setShowLandPage={setShowLandPage} setShowFaqPage={setShowFaqPage} />
+      <Footer
+        setShowTicketsPage={setShowTicketsPage}
+        setShowLineup={setShowLineup}
+        setShowLandPage={setShowLandPage}
+        setShowFaqPage={setShowFaqPage}
+      />
     </>
   );
 }

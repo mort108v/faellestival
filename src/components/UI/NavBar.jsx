@@ -1,8 +1,8 @@
 import React, { useContext } from "react";
-import { LoginContext } from "../../Contexts/LoginContext.js";
+import { LoginContext } from "../../Contexts/LoginContext";
 import Btn from "./Btn";
-import NavBrand from "./NavBrand.jsx";
-import BtnGrid from "../UI/BtnGrid.jsx";
+import NavBrand from "./NavBrand";
+import BtnGrid from "../UI/BtnGrid";
 
 function NavBar(props) {
   const { isLogin, setIsLogin } = useContext(LoginContext);
@@ -70,7 +70,12 @@ function NavBar(props) {
         />
       )}
       {props.showLandPage && (
-        <Btn action={goToFestApp} content="Fest App" className="primBtn" id="festApp" />
+        <Btn
+          action={goToFestApp}
+          content="Fest App"
+          className="primBtn"
+          id="festApp"
+        />
       )}
       {props.showLandPage && (
         <Btn content="☰" action={openBurger} className="burgerBtn" />

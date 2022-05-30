@@ -7,9 +7,9 @@ import ProgramPage from "./ProgramPage";
 import FaellesCardPage from "./FaellesCardPage";
 import BurgerMenu from "./UI/BurgerMenu";
 // import { BandsContext } from "../Contexts/BandsContext.js";
-import { LoginContext } from "../Contexts/LoginContext.js";
-import { AvailableContext } from "../Contexts/AvailableContext.js";
-import { ScheduleContext } from "../Contexts/ScheduleContext.js";
+import { LoginContext } from "../Contexts/LoginContext";
+// import { AvailableContext } from "../Contexts/AvailableContext.js";
+// import { ScheduleContext } from "../Contexts/ScheduleContext.js";
 
 function FestApp(props) {
   const { isLogin, setIsLogin } = useContext(LoginContext);
@@ -32,19 +32,18 @@ function FestApp(props) {
         shoArtistdPage={showArtistPage}
         showProgramPage={showProgramPage}
       />
-  {   props.showBurgerMenu && <BurgerMenu
-        {...props}
-        setShowFestLandPage={setShowFestLandPage}
-        setShoArtistdPage={setShowArtistPage}
-        setShowProgramPage={setShowProgramPage}
-        className="burgerMenu"
-        showFestLandPage={showFestLandPage}
-        shoArtistdPage={showArtistPage}
-        showProgramPage={showProgramPage}
-      />}
-
-
-
+      {props.showBurgerMenu && (
+        <BurgerMenu
+          {...props}
+          setShowFestLandPage={setShowFestLandPage}
+          setShoArtistdPage={setShowArtistPage}
+          setShowProgramPage={setShowProgramPage}
+          className="burgerMenu"
+          showFestLandPage={showFestLandPage}
+          shoArtistdPage={showArtistPage}
+          showProgramPage={showProgramPage}
+        />
+      )}
 
       {showFestLandPage && (
         <FestLandPage

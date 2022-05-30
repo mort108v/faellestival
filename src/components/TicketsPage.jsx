@@ -1,6 +1,6 @@
 import React, { useState, useContext } from "react";
-import { TicketsContext } from "../Contexts/TicketsContext.js";
-import { AvailableContext } from "../Contexts/AvailableContext.js";
+import { TicketsContext } from "../Contexts/TicketsContext";
+import { AvailableContext } from "../Contexts/AvailableContext";
 import MainSect from "./sections/MainSect";
 import CardGrid from "./UI/CardGrid";
 import OrderForm from "./sections/OrderForm";
@@ -23,15 +23,24 @@ function TicketsPage(props) {
   function goToMain() {
     props.setShowTicketsPage(false);
     props.setShowLandPage(true);
-
   }
 
   return (
-  <main>
-      <MainSect className="mainSect" content="Tickets" bcReg="Main" {...props} />
-      <CardGrid className="cardGrid" ticketsContent={ticketsContent} setShowForm={setShowForm} soldOut={soldOut} />
-      {showForm && <OrderForm setShowForm={setShowForm} /> }
-  </main>
+    <main>
+      <MainSect
+        className="mainSect"
+        content="Tickets"
+        bcReg="Main"
+        {...props}
+      />
+      <CardGrid
+        className="cardGrid"
+        ticketsContent={ticketsContent}
+        setShowForm={setShowForm}
+        soldOut={soldOut}
+      />
+      {showForm && <OrderForm setShowForm={setShowForm} />}
+    </main>
   );
 }
 

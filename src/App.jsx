@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from "react";
-import { BandsContext } from "./Contexts/BandsContext.js";
-import { LoginContext } from "./Contexts/LoginContext.js";
-import { TicketsContext } from "./Contexts/TicketsContext.js";
-import { ScheduleContext } from "./Contexts/ScheduleContext.js";
-import { AvailableContext } from "./Contexts/AvailableContext.js";
+import { BandsContext } from "./Contexts/BandsContext";
+import { LoginContext } from "./Contexts/LoginContext";
+import { TicketsContext } from "./Contexts/TicketsContext";
+import { ScheduleContext } from "./Contexts/ScheduleContext";
+import { AvailableContext } from "./Contexts/AvailableContext";
 import FestApp from "./components/FestApp";
-import RegApp from "./components/RegApp";
+import RegApp from "./components/regApp";
 
 export const envData = {
   availableSpots: import.meta.env.VITE_FAELLESTIVAL_AVAILABLE_SPOTS,
