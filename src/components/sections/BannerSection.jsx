@@ -28,12 +28,11 @@ function BannerSection(props) {
   //   }
 
   // }, []);
-  useEffect(() => {
-    const myTimer = setTimeout;
+  useEffect(() => { 
+    setTimeout;
     if (currentSlide <= 4) {
       setTimeout(() => {
         setCurrentSlide(currentSlide + 1);
-        console.log(currentSlide);
       }, 4000);
     } else {
    setCurrentSlide(1)
