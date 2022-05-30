@@ -30,7 +30,7 @@ function ProgramTable() {
         <tbody>
             {/* {showTable()} */}
           {schedule.Jotunheim[xday].map((timeslot, index) => (
-            <tr>
+            <tr key={index}>
               <td>{timeslot.start}</td>
               <td>{timeslot.act}</td>
               <td>{vStage[xday][index].act}</td>

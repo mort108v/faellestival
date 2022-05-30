@@ -1,5 +1,4 @@
 import React from "react";
-import ProgramCard from "../UI/ProgramCard";
 import MainTitle from "../UI/MainTitle";
 import Breadcrumbs from "../UI/Breadcrumbs";
 
@@ -20,7 +19,6 @@ function ArtistHeader(props) {
       <Breadcrumbs bc="Main" className="breadCrumbs" action={goToMain} />
       <img src={imgPath} alt={props.pickedId.name} />
       <MainTitle className="mainTitle" content={props.pickedId.name} />
-      <ProgramCard {...props} />
     </section>
   );
 }
