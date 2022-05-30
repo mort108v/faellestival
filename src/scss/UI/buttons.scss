@@ -44,11 +44,47 @@
     }
   }
 
+  #festApp{
+    position: fixed;
+    z-index: 100;
+    top: 1vw;
+    right: 1vw;
+  }
+
   .prev{
     transform: rotate(90deg);
   }
 
   .next{
     transform: rotate(-90deg);
+  }
+
+  .down{
+    display: flex;
+    justify-content: center;
+  }
+
+  .burgerBtn{
+    display: none;
+  }
+  
+
+  @media only screen and (max-width: 800px) {
+    .burgerBtn {
+      display: block;
+      position: absolute;
+      z-index: 100;
+      top: 2vw;
+      right: 2vw;
+      width: 2rem;
+      height: 2rem;
+
+     
+    }
+
+
+  #festApp{
+    display: none;
+  }
   }
   
